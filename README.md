@@ -1,4 +1,4 @@
-# Firebase Studio
+# PetMets
 
 This is a NextJS starter in Firebase Studio.
 
