@@ -46,7 +46,7 @@ export default function Header() {
           <div className="flex items-center gap-2 cursor-pointer" aria-label="PetMets Connect Home">
             <PawPrint className="h-8 w-8 text-primary" />
             <span className="font-headline text-2xl font-semibold text-primary">
-              PetMets Connect
+              PetMets
             </span>
           </div>
         </Link>

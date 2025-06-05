@@ -11,11 +11,11 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             <PawPrint className="h-7 w-7 text-primary" />
             <span className="font-headline text-xl font-semibold text-primary">
-              PetMets Connect
+              PetMets
             </span>
           </div>
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} PetMets Connect. All rights reserved.
+            &copy; {currentYear} PetMets. All rights reserved.
           </p>
           <div className="flex items-center space-x-4">
             <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors">
