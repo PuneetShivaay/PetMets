@@ -21,7 +21,7 @@ const alegreya = Alegreya({
 });
 
 export const metadata: Metadata = {
-  title: 'PetMets Connect',
+  title: 'PetMets',
   description: 'Connecting pet owners and their furry friends.',
   // icons: {
   //   icon: '/favicon.ico', // Assuming a favicon might be added later

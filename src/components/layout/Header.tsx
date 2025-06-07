@@ -39,6 +39,10 @@ export default function Header() {
     { href: '/about', label: 'About Us' },
   ];
 
+  const handleLoginClick = () => {
+    window.open('https://app.petmets.in', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
@@ -64,9 +68,13 @@ export default function Header() {
               </Button>
             </>
           ) : (
-            <NavLink href="/login">
+            <Button
+              variant="ghost"
+              onClick={handleLoginClick}
+              className="justify-start md:w-auto text-foreground hover:text-accent-foreground hover:bg-accent transition-colors duration-200"
+            >
               <LogIn className="mr-2 h-4 w-4" /> Login
-            </NavLink>
+            </Button>
           )}
         </nav>
 
@@ -118,9 +126,16 @@ export default function Header() {
                   </>
                 ) : (
                   <SheetClose asChild>
-                    <NavLink href="/login">
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-start text-foreground hover:text-accent-foreground hover:bg-accent transition-colors duration-200"
+                      onClick={() => {
+                        handleLoginClick();
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
                       <LogIn className="mr-2 h-4 w-4" /> Login
-                    </NavLink>
+                    </Button>
                   </SheetClose>
                 )}
               </nav>
