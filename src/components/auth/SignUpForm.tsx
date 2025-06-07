@@ -1,3 +1,4 @@
+
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -48,7 +49,7 @@ export default function SignUpForm() {
       await signup(values.email, values.password);
       toast({
         title: "Sign Up Successful!",
-        description: "Welcome to PetMets Connect. Let's get your profile set up!",
+        description: "Welcome to PetMets. Let's get your profile set up!",
       });
       // Navigation is handled by AuthContext now
     } catch (error) {
@@ -65,7 +66,7 @@ export default function SignUpForm() {
     <Card className="w-full max-w-md shadow-xl">
       <CardHeader>
         <CardTitle className="font-headline text-3xl text-primary flex items-center">
-          <UserPlus className="mr-2 h-7 w-7" /> Join PetMets Connect
+          <UserPlus className="mr-2 h-7 w-7" /> Join PetMets
         </CardTitle>
         <CardDescription>Create your account to start connecting with pet lovers.</CardDescription>
       </CardHeader>

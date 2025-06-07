@@ -69,7 +69,7 @@ export default function FeaturesPage() {
           Explore Our Pawsome Features
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-          Discover how PetMets Connect makes pet parenting more joyful and connected. From finding playmates to managing care, we've got features designed for you and your furry friends.
+          Discover how PetMets makes pet parenting more joyful and connected. From finding playmates to managing care, we've got features designed for you and your furry friends.
         </p>
       </header>
 

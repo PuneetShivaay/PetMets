@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { PawPrint, UserPlus, Search, MessageCircle,Users } from "lucide-react";
 import Image from "next/image";
@@ -25,7 +26,7 @@ export default function HowItWorksPage() {
     {
       icon: <Users className="h-10 w-10 text-accent" />,
       title: "Build Your Community",
-      description: "Participate in local events, join groups, and share experiences. PetMets Connect is more than an app – it's a community!",
+      description: "Participate in local events, join groups, and share experiences. PetMets is more than an app – it's a community!",
       image: { src: "https://placehold.co/500x300.png", alt: "Pets playing together at a park", hint: "community event pets" },
     },
   ];
@@ -35,10 +36,10 @@ export default function HowItWorksPage() {
       <div className="mb-12 text-center">
         <PawPrint className="mx-auto h-16 w-16 text-primary mb-4" />
         <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-          How PetMets Connect Works
+          How PetMets Works
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-          Connecting with fellow pet lovers is simple. Follow these easy steps to start your journey with PetMets Connect.
+          Connecting with fellow pet lovers is simple. Follow these easy steps to start your journey with PetMets.
         </p>
       </div>
 
@@ -82,7 +83,7 @@ export default function HowItWorksPage() {
           Ready to Get Started?
         </h2>
         <p className="mt-3 max-w-md mx-auto text-lg text-foreground/80">
-          Join PetMets Connect today and find your pet's new best friend!
+          Join PetMets today and find your pet's new best friend!
         </p>
         <a href="/signup">
           <button

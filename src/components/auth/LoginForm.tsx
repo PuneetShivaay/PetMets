@@ -1,3 +1,4 @@
+
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -43,7 +44,7 @@ export default function LoginForm() {
       await login(values.email, values.password);
       toast({
         title: "Login Successful!",
-        description: "Welcome back to PetMets Connect.",
+        description: "Welcome back to PetMets.",
       });
       // Navigation is handled by AuthContext now
     } catch (error) {

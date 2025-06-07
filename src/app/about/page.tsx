@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PawPrint, Target, Eye, Users } from "lucide-react";
 import Image from "next/image";
@@ -8,7 +9,7 @@ export default function AboutPage() {
       <header className="mb-12 text-center">
         <PawPrint className="mx-auto h-16 w-16 text-primary mb-4" />
         <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-          About PetMets Connect
+          About PetMets
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
           We believe in the power of connection – for pets and their people. Learn more about our story and what drives us.
@@ -22,7 +23,7 @@ export default function AboutPage() {
             Our Mission
           </h2>
           <p className="text-lg text-foreground/80 mb-4">
-            At PetMets Connect, our mission is to foster a joyful and supportive community for pet owners. We aim to make it easy for pets to find compatible playmates and for owners to build meaningful friendships, enhancing the lives of both.
+            At PetMets, our mission is to foster a joyful and supportive community for pet owners. We aim to make it easy for pets to find compatible playmates and for owners to build meaningful friendships, enhancing the lives of both.
           </p>
           <p className="text-lg text-foreground/80">
             We strive to create a safe, inclusive, and engaging platform where every wagging tail and happy purr leads to a stronger bond within the pet-loving community.
@@ -53,7 +54,7 @@ export default function AboutPage() {
             Our Vision
           </h2>
           <p className="text-lg text-foreground/80 mb-4">
-            We envision a world where no pet feels lonely and every pet owner has a network of support. PetMets Connect aspires to be the leading platform for pet socialization, recognized for its positive impact on animal well-being and human connection.
+            We envision a world where no pet feels lonely and every pet owner has a network of support. PetMets aspires to be the leading platform for pet socialization, recognized for its positive impact on animal well-being and human connection.
           </p>
           <p className="text-lg text-foreground/80">
             Through innovation and a deep love for animals, we aim to continuously evolve, offering new ways for our community to connect, learn, and grow together.
@@ -67,7 +68,7 @@ export default function AboutPage() {
           Meet the Team (Placeholder)
         </h2>
         <p className="text-lg text-foreground/80 max-w-xl mx-auto mb-8">
-          We're a passionate group of pet lovers, designers, and developers dedicated to making PetMets Connect the best it can be. More about us coming soon!
+          We're a passionate group of pet lovers, designers, and developers dedicated to making PetMets the best it can be. More about us coming soon!
         </p>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 3 }).map((_, index) => (
