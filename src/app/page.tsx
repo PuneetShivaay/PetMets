@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
@@ -5,6 +6,8 @@ import Link from "next/link";
 import { PawPrint, Users, Search, MessageSquareHeart } from "lucide-react";
 
 export default function HomePage() {
+  const externalAppUrl = "https://app.petmets.in";
+
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section */}
@@ -18,7 +21,7 @@ export default function HomePage() {
               Discover a vibrant community where pet owners and their furry, scaly, or feathered friends can find companionship, share experiences, and create lasting bonds.
             </p>
             <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center md:justify-start">
-              <Link href="/signup" passHref>
+              <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                   Join Our Community
                   <PawPrint className="ml-2 h-5 w-5" />
@@ -90,7 +93,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mx-auto w-full max-w-sm space-y-2">
-            <Link href="/signup" passHref>
+            <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
               <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
                 Sign Up Now
               </Button>

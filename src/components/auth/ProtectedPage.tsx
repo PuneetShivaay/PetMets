@@ -1,3 +1,4 @@
+
 "use client";
 import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
@@ -8,13 +9,16 @@ import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 
+const externalAppLoginUrl = "https://app.petmets.in";
+
 export default function ProtectedPage({ children }: { children: ReactNode }) {
   const { user, loading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
     if (!loading && !user) {
-      router.replace('/login?redirected=true');
+      // Redirect to external login page
+      window.location.href = externalAppLoginUrl;
     }
   }, [user, loading, router]);
 
@@ -29,8 +33,8 @@ export default function ProtectedPage({ children }: { children: ReactNode }) {
   }
 
   if (!user) {
-     // This state should ideally be brief due to the useEffect redirect.
-     // It can serve as a fallback UI.
+    // This state is brief. User will be redirected by useEffect.
+    // Show a message while redirecting.
     return (
        <div className="flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center bg-background p-4 text-center">
         <Card className="w-full max-w-md shadow-xl">
@@ -40,9 +44,9 @@ export default function ProtectedPage({ children }: { children: ReactNode }) {
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-foreground/80 mb-6">
-              You need to be logged in to access this page.
+              You need to be logged in to access this page. Redirecting to login...
             </p>
-            <Link href="/login" passHref>
+            <Link href={externalAppLoginUrl} passHref target="_blank" rel="noopener noreferrer">
               <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
                 Go to Login
               </Button>

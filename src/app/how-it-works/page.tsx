@@ -2,8 +2,10 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { PawPrint, UserPlus, Search, MessageCircle,Users } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link"; // Import Link
 
 export default function HowItWorksPage() {
+  const externalAppUrl = "https://app.petmets.in";
   const steps = [
     {
       icon: <UserPlus className="h-10 w-10 text-accent" />,
@@ -85,13 +87,13 @@ export default function HowItWorksPage() {
         <p className="mt-3 max-w-md mx-auto text-lg text-foreground/80">
           Join PetMets today and find your pet's new best friend!
         </p>
-        <a href="/signup">
+        <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
           <button
             className="mt-8 inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-medium text-accent-foreground shadow-sm hover:bg-accent/90 transition-colors"
           >
             Sign Up Now
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );
