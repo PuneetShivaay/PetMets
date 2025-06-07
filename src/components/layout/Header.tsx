@@ -9,7 +9,6 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
-// NavLink no longer wraps with SheetClose by default
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
   const pathname = usePathname();
   const isActive = pathname === href;
@@ -31,10 +30,10 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 export default function Header() {
   const { user, logout, loading } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname(); // Get pathname here for NavLink isActive prop if needed, or rely on NavLink's internal usePathname
 
   const navItems = [
     { href: '/', label: 'Home' },
+    { href: '/features', label: 'Features' },
     { href: '/how-it-works', label: 'How It Works' },
     { href: '/about', label: 'About Us' },
   ];
