@@ -1,4 +1,6 @@
+
 import type {Config} from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme'; // Import defaultTheme for fallbacks
 
 export default {
   darkMode: ['class'],
@@ -17,9 +19,12 @@ export default {
     },
     extend: {
       fontFamily: {
-        // Define CSS variables for fonts in layout.tsx and use them here
-        headline: ['var(--font-belleza)', 'sans-serif'],
-        body: ['var(--font-alegreya)', 'serif'],
+        // Set the default sans-serif font family for the app to PT Sans
+        // Tailwind utilities like `text-sm`, `text-lg` etc., will use this.
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+        // Custom utilities for headline and body, also using PT Sans
+        headline: ['var(--font-sans)', 'sans-serif'],
+        body: ['var(--font-sans)', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {

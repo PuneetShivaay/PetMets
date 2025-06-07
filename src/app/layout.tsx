@@ -1,5 +1,6 @@
+
 import type { Metadata } from 'next';
-import { Alegreya, Belleza } from 'next/font/google'; // Using next/font for optimal loading
+import { PT_Sans } from 'next/font/google'; // Using next/font for optimal loading
 import './globals.css';
 import { AuthProvider } from '@/contexts/AuthContext';
 import Header from '@/components/layout/Header';
@@ -7,25 +8,15 @@ import Footer from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
-const belleza = Belleza({
+const ptSans = PT_Sans({
   subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-belleza',
-});
-
-const alegreya = Alegreya({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'], // Added more weights if needed
-  style: ['normal', 'italic'],
-  variable: '--font-alegreya',
+  weight: ['400', '700'], // PT Sans offers normal (400) and bold (700)
+  variable: '--font-sans', // Generic variable name for the sans-serif font
 });
 
 export const metadata: Metadata = {
   title: 'PetMets',
   description: 'Connecting pet owners and their furry friends.',
-  // icons: {
-  //   icon: '/favicon.ico', // Assuming a favicon might be added later
-  // },
 };
 
 export default function RootLayout({
@@ -36,13 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* next/font handles font loading, direct links not needed if using next/font */}
       </head>
       <body
         className={cn(
           'min-h-screen bg-background font-body antialiased',
-          belleza.variable,
-          alegreya.variable
+          ptSans.variable // Apply the PT Sans font variable to the body
         )}
       >
         <AuthProvider>
