@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { PawPrint, LogIn, Menu, X } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -79,6 +79,9 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-background p-6">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+              </SheetHeader>
               <div className="mb-6 flex items-center justify-between">
                 <SheetClose asChild>
                   <Link href="/" passHref>
@@ -103,7 +106,7 @@ export default function Header() {
                   </SheetClose>
                 ))}
                 <hr className="my-2 border-border" />
-                <SheetClose asChild>
+                
                     <Button
                       variant="ghost"
                       className="w-full justify-start text-foreground hover:text-accent-foreground hover:bg-accent transition-colors duration-200"
@@ -114,7 +117,7 @@ export default function Header() {
                     >
                       <LogIn className="mr-2 h-4 w-4" /> Login
                     </Button>
-                  </SheetClose>
+                  
               </nav>
             </SheetContent>
           </Sheet>
