@@ -16,11 +16,11 @@ h1, h2, h3, h4, h5, h6 {
     --background: 208 25% 95%; /* Light Gray #F0F4F7 */
     --foreground: 210 10% 20%; /* Dark Slate Gray-ish */
 
-    --card: 208 25% 95%; /* Same as background */
-    --card-foreground: 210 10% 20%; /* Same as foreground */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 210 10% 20%; /* Dark Slate Gray-ish */
 
-    --popover: 208 25% 95%; /* Same as background */
-    --popover-foreground: 210 10% 20%; /* Same as foreground */
+    --popover: 0 0% 100%; /* White - to match card */
+    --popover-foreground: 210 10% 20%; /* Dark Slate Gray-ish */
 
     --primary: 15 100% 59%; /* Orange-Red #FF642F */
     --primary-foreground: 0 0% 100%; /* White */
@@ -58,10 +58,10 @@ h1, h2, h3, h4, h5, h6 {
     --background: 210 10% 10%; /* Very Dark Blue/Gray */
     --foreground: 208 25% 90%; /* Light Gray/Almost White */
 
-    --card: 210 10% 12%;
+    --card: 210 10% 12%; /* Kept dark for dark theme consistency */
     --card-foreground: 208 25% 90%;
 
-    --popover: 210 10% 12%;
+    --popover: 210 10% 12%; /* Kept dark for dark theme consistency */
     --popover-foreground: 208 25% 90%;
 
     --primary: 15 100% 65%; /* Brighter Orange-Red for dark mode */
