@@ -1,4 +1,6 @@
+
 import { config } from 'dotenv';
 config();
 
-import '@/ai/flows/draft-pet-profile.ts';
+// The draft-pet-profile.ts flow is no longer used as the dashboard and profile form are removed.
+// import '@/ai/flows/draft-pet-profile.ts';
