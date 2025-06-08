@@ -4,11 +4,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Image from "next/image";
 import Link from "next/link";
 import { PawPrint, Users, Search, MessageSquareHeart } from "lucide-react";
-import { generateHeroImage } from "@/ai/flows/generate-hero-image-flow";
+// Removed: import { generateHeroImage } from "@/ai/flows/generate-hero-image-flow";
 
 export default async function HomePage() {
   const externalAppUrl = "https://app.petmets.in";
-  const heroImageUrl = await generateHeroImage();
+  // The heroImageUrl is now a static path.
+  // You need to place an image named 'home-image.png' in your 'public/images/' folder.
+  const heroImageUrl = "/images/home-image.png";
 
   return (
     <div className="flex flex-col items-center">
@@ -37,13 +39,13 @@ export default async function HomePage() {
             </div>
           </div>
           <Image
-            src={heroImageUrl}
-            alt="Two dogs and five cats in a vibrant flower garden"
+            src={heroImageUrl} // Using the static path
+            alt="Two happy dogs and five cute cats together in a vibrant outdoor setting"
             data-ai-hint="dogs cats garden"
             width={600}
             height={400}
             className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-            priority // Adding priority as this is likely LCP
+            priority 
           />
         </div>
       </section>
