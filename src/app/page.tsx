@@ -4,9 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Image from "next/image";
 import Link from "next/link";
 import { PawPrint, Users, Search, MessageSquareHeart } from "lucide-react";
+import { generateHeroImage } from "@/ai/flows/generate-hero-image-flow";
 
-export default function HomePage() {
+export default async function HomePage() {
   const externalAppUrl = "https://app.petmets.in";
+  const heroImageUrl = await generateHeroImage();
 
   return (
     <div className="flex flex-col items-center">
@@ -35,12 +37,13 @@ export default function HomePage() {
             </div>
           </div>
           <Image
-            src="https://placehold.co/600x400.png"
-            alt="Happy pets and owners"
-            data-ai-hint="happy pets owners"
+            src={heroImageUrl}
+            alt="Two dogs and five cats in a vibrant flower garden"
+            data-ai-hint="dogs cats garden"
             width={600}
             height={400}
             className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+            priority // Adding priority as this is likely LCP
           />
         </div>
       </section>
