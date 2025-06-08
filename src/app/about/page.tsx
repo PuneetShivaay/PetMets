@@ -75,11 +75,19 @@ export default function AboutPage() {
             <Card key={index} className="bg-card shadow-md hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Image
-                  src={`https://placehold.co/300x300.png`}
+                  // Example: Referencing an image from public/images/
+                  // You would replace 'team-member-placeholder.png' with your actual image file
+                  // and ensure that file exists in /public/images/team-member-placeholder.png
+                  // For now, this will likely show a broken image until you add the actual file.
+                  // I'm using a placeholder path here to demonstrate the structure.
+                  // To make this work, create /public/images/team-member-placeholder.png
+                  // Or, if you have team-member-1.png, team-member-2.png, etc., you can use:
+                  // src={`/images/team-member-${index + 1}.png`}
+                  src={`/images/team-member-placeholder-${index + 1}.png`} // Changed to use an example path from public/images
                   alt={`Team member ${index + 1}`}
                   data-ai-hint="team member portrait"
-                  width={300}
-                  height={300}
+                  width={300} // Replace with actual image width
+                  height={300} // Replace with actual image height
                   className="mx-auto rounded-full mb-4 h-32 w-32 object-cover"
                 />
                 <CardTitle className="font-headline text-xl text-primary">Team Member {index + 1}</CardTitle>
