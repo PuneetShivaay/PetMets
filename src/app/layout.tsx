@@ -17,9 +17,9 @@ const ptSans = PT_Sans({
 export const metadata: Metadata = {
   title: 'PetMets',
   description: 'Connecting pet owners and their furry friends.',
-  // icons: {
-  //   icon: '/favicon.ico', // Example, ensure your favicon exists or remove
-  // },
+  icons: {
+    icon: '/favicon.ico', // Next.js will look for src/app/favicon.ico
+  },
 };
 
 export default function RootLayout({
