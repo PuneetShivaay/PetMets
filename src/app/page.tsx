@@ -1,13 +1,14 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { PawPrint, Users, Search, MessageSquareHeart, MapPin, Send, CalendarCheck, ShoppingCart, ShieldCheck } from "lucide-react";
+import { PawPrint, Users, Search, MessageSquareHeart, MapPin, Send, CalendarCheck, ShoppingCart, ShieldCheck, Heart, Dog, Scissors, Home as HomeIcon, GraduationCap, ToyBrick, Check } from "lucide-react";
+import type { ReactNode } from "react";
 
 export default async function HomePage() {
   const externalAppUrl = "https://app.petmets.in";
-  const heroImageUrl = "/images/home-image.png";
+  const heroImageUrl = "/images/home-image.png"; 
 
   const whyChoosePetMetsItems = [
     {
@@ -39,6 +40,50 @@ export default async function HomePage() {
       icon: <ShieldCheck className="h-10 w-10 text-accent" />,
       title: "Verified Service Providers",
       description: "All service providers undergo strict KYC verification to ensure your pet's safety and security.",
+    },
+  ];
+
+  interface ServiceCardItemProps {
+    icon: ReactNode;
+    title: string;
+    description: string;
+    features: string[];
+    ctaText: string;
+    ctaLink: string;
+  }
+
+  const serviceCardItems: ServiceCardItemProps[] = [
+    {
+      icon: <Dog className="h-8 w-8 text-primary" />,
+      title: "Pet Walking",
+      description: "Professional, GPS-tracked walks for your pet when you're busy.",
+      features: ["Real-time GPS tracking", "Verified, trained walkers", "Walk reports & photos"],
+      ctaText: "Book a Walker",
+      ctaLink: externalAppUrl,
+    },
+    {
+      icon: <Scissors className="h-8 w-8 text-primary" />,
+      title: "Pet Grooming",
+      description: "Professional grooming services to keep your pet looking their best.",
+      features: ["Bath & full grooming", "Nail trimming & ear cleaning", "Breed-specific styling"],
+      ctaText: "Book Grooming",
+      ctaLink: externalAppUrl,
+    },
+    {
+      icon: <HomeIcon className="h-8 w-8 text-primary" />,
+      title: "Pet Boarding",
+      description: "Safe, comfortable boarding when you need to be away from home.",
+      features: ["24/7 supervision", "Daily updates & photos", "Playtime & exercise included"],
+      ctaText: "Reserve Boarding",
+      ctaLink: externalAppUrl,
+    },
+    {
+      icon: <GraduationCap className="h-8 w-8 text-primary" />,
+      title: "Pet Training",
+      description: "Expert training services to help your pet learn and grow.",
+      features: ["Basic obedience training", "Behavior correction", "Private & group sessions"],
+      ctaText: "Book Training",
+      ctaLink: externalAppUrl,
     },
   ];
 
@@ -138,8 +183,60 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Pet Services Section */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-muted-foreground">
+              Our Services
+            </div>
+            <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-5xl">
+              Pet Services
+            </h2>
+            <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Everything your pet needs in one place. Access a wide range of services through our trusted network.
+            </p>
+          </div>
+
+          <div className="mb-10 text-center">
+            <div className="inline-flex items-center justify-center rounded-full bg-primary/10 p-3 mb-4">
+                <Heart className="h-10 w-10 text-primary" />
+            </div>
+            <h3 className="font-headline text-2xl font-semibold text-primary mb-2">Match Your Pet</h3>
+            <p className="max-w-2xl mx-auto text-foreground/70">
+              Find the perfect pet companion for pre-wedding photoshoots and joyous celebrations. Coordinate booking details seamlessly for those special moments. Our platform helps you connect with other pet owners to create memorable experiences.
+            </p>
+          </div>
+
+          <div className="mx-auto grid max-w-6xl items-stretch gap-8 py-12 sm:grid-cols-1 md:grid-cols-2 lg:gap-12">
+            {serviceCardItems.map((service, index) => (
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                features={service.features}
+                ctaText={service.ctaText}
+                ctaLink={service.ctaLink}
+              />
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <div className="inline-flex items-center justify-center rounded-full bg-primary/10 p-3 mb-4">
+                <ToyBrick className="h-10 w-10 text-primary" />
+            </div>
+            <h3 className="font-headline text-2xl font-semibold text-primary mb-2">Pet Playzone</h3>
+            <p className="max-w-2xl mx-auto text-foreground/70">
+              Our dedicated pet play area offers a spacious garden and a refreshing swimming pool for pure fun and freedom. Let your pets socialize, exercise, and enjoy themselves in a safe and stimulating environment.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
       {/* Call to Action Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/50 border-t border-border">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-background border-t border-border">
         <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary md:text-4xl/tight">
@@ -170,7 +267,7 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
       <CardHeader className="flex flex-col items-center text-center p-6">
         <div className="mb-4 rounded-full bg-accent/10 p-3">
           {icon}
@@ -192,7 +289,7 @@ interface BenefitItemProps {
 
 function BenefitItem({ icon, title, description }: BenefitItemProps) {
   return (
-    <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card shadow-md hover:shadow-lg transition-shadow">
+    <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card shadow-md hover:shadow-lg transition-shadow h-full">
       <div className="mb-4 rounded-full bg-primary/10 p-4">
         {icon}
       </div>
@@ -201,3 +298,45 @@ function BenefitItem({ icon, title, description }: BenefitItemProps) {
     </div>
   );
 }
+
+interface ServiceCardProps {
+  icon: ReactNode;
+  title: string;
+  description: string;
+  features: string[];
+  ctaText: string;
+  ctaLink: string;
+}
+
+function ServiceCard({ icon, title, description, features, ctaText, ctaLink }: ServiceCardProps) {
+  return (
+    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+      <CardHeader className="flex flex-row items-center gap-4 p-6 space-y-0">
+        <div className="rounded-full bg-primary/10 p-3">
+          {icon}
+        </div>
+        <CardTitle className="font-headline text-2xl text-primary">{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="p-6 pt-0 flex-grow">
+        <p className="text-sm text-foreground/70 mb-4">{description}</p>
+        <ul className="space-y-2 mb-6">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-center text-sm text-foreground/80">
+              <Check className="h-4 w-4 mr-2 text-green-500 flex-shrink-0" />
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+      <CardFooter className="p-6 pt-0 mt-auto">
+        <Link href={ctaLink} passHref target="_blank" rel="noopener noreferrer" className="w-full">
+          <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+            {ctaText}
+          </Button>
+        </Link>
+      </CardFooter>
+    </Card>
+  );
+}
+
+    
