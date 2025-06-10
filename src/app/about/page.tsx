@@ -1,7 +1,41 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PawPrint, Target, Eye, Users } from "lucide-react";
+import { PawPrint, Target, Eye, Star, HeartHandshake } from "lucide-react";
 import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+interface Review {
+  name: string;
+  avatarFallback: string;
+  reviewText: string;
+  rating: number;
+  petName?: string;
+  location?: string;
+}
+
+const reviewsData: Review[] = [
+  {
+    name: "Sarah M. & Buddy",
+    avatarFallback: "SM",
+    reviewText: "PetMets made finding a playmate for Buddy so easy! We've met some wonderful dogs and owners in our neighborhood. The app is intuitive and safe.",
+    rating: 5,
+    location: "Sunnyvale, CA",
+  },
+  {
+    name: "John B. & Luna",
+    avatarFallback: "JB",
+    reviewText: "I was worried about leaving Luna when I went on vacation, but PetMets boarding was fantastic. Daily updates and a happy pup when I returned!",
+    rating: 5,
+    location: "Austin, TX",
+  },
+  {
+    name: "Lisa K. & Oliver",
+    avatarFallback: "LK",
+    reviewText: "The training resources and connections on PetMets have been invaluable. Oliver is a much more confident and well-behaved cat now. Highly recommend!",
+    rating: 4,
+    location: "Chicago, IL",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -62,42 +96,47 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="text-center">
-        <h2 className="font-headline text-3xl font-semibold text-primary mb-8 flex items-center justify-center">
-          <Users className="mr-3 h-8 w-8 text-accent" />
-          Meet the Team (Placeholder)
-        </h2>
-        <p className="text-lg text-foreground/80 max-w-xl mx-auto mb-8">
-          We're a passionate group of pet lovers, designers, and developers dedicated to making PetMets the best it can be. More about us coming soon!
-        </p>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <Card key={index} className="bg-card shadow-md hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Image
-                  // Example: Referencing an image from public/images/
-                  // You would replace 'team-member-placeholder.png' with your actual image file
-                  // and ensure that file exists in /public/images/team-member-placeholder.png
-                  // For now, this will likely show a broken image until you add the actual file.
-                  // I'm using a placeholder path here to demonstrate the structure.
-                  // To make this work, create /public/images/team-member-placeholder.png
-                  // Or, if you have team-member-1.png, team-member-2.png, etc., you can use:
-                  // src={`/images/team-member-${index + 1}.png`}
-                  src={`/images/team-member-placeholder-${index + 1}.png`} // Changed to use an example path from public/images
-                  alt={`Team member ${index + 1}`}
-                  data-ai-hint="team member portrait"
-                  width={300} // Replace with actual image width
-                  height={300} // Replace with actual image height
-                  className="mx-auto rounded-full mb-4 h-32 w-32 object-cover"
-                />
-                <CardTitle className="font-headline text-xl text-primary">Team Member {index + 1}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">Role/Title</p>
-                <p className="text-sm text-foreground/70 mt-2">A short bio about the team member will appear here.</p>
-              </CardContent>
-            </Card>
-          ))}
+      <section className="py-12 md:py-16 lg:py-24 bg-secondary/30 rounded-xl">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="mb-12 text-center">
+            <HeartHandshake className="mx-auto h-16 w-16 text-primary mb-4" />
+            <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+              Hear From Our Happy Pet Parents
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
+              See what our community members are saying about their experiences with PetMets.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {reviewsData.map((review, index) => (
+              <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                <CardHeader className="flex flex-row items-center gap-4 pb-4">
+                  <Avatar className="h-12 w-12">
+                    <AvatarImage src={`https://placehold.co/100x100.png?text=${review.avatarFallback}`} alt={review.name} data-ai-hint="user avatar" />
+                    <AvatarFallback>{review.avatarFallback}</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <CardTitle className="font-headline text-lg text-primary">{review.name}</CardTitle>
+                    {review.location && (
+                      <p className="text-xs text-muted-foreground">{review.location}</p>
+                    )}
+                  </div>
+                </CardHeader>
+                <CardContent className="flex-grow pt-0">
+                  <div className="flex items-center mb-2">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`h-5 w-5 ${i < review.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground/50'}`}
+                      />
+                    ))}
+                  </div>
+                  <p className="text-sm text-foreground/80">{review.reviewText}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
     </div>
