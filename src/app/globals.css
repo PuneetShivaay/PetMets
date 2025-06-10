@@ -4,11 +4,11 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-sans), sans-serif; /* Default to Nunito for body */
+  font-family: var(--font-sans), sans-serif; /* Default to Alegreya Sans for body */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans), sans-serif; /* Nunito for headlines */
+  font-family: var(--font-belleza), var(--font-sans), sans-serif; /* Belleza for headlines, fallback to Alegreya Sans */
 }
 
 @layer base {

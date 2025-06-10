@@ -1,6 +1,6 @@
 
 import type {Config} from 'tailwindcss';
-import defaultTheme from 'tailwindcss/defaultTheme'; // Import defaultTheme for fallbacks
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
   darkMode: ['class'],
@@ -19,12 +19,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        // Set the default sans-serif font family for the app to PT Sans
-        // Tailwind utilities like `text-sm`, `text-lg` etc., will use this.
-        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
-        // Custom utilities for headline and body, also using PT Sans
-        headline: ['var(--font-sans)', 'sans-serif'],
-        body: ['var(--font-sans)', 'sans-serif'],
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans], // Will be Alegreya Sans
+        headline: ['var(--font-belleza)', 'var(--font-sans)', ...defaultTheme.fontFamily.sans], // Belleza primary, fallback to Alegreya Sans
+        body: ['var(--font-sans)', ...defaultTheme.fontFamily.sans], // Will be Alegreya Sans
         code: ['monospace'],
       },
       colors: {

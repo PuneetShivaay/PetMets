@@ -1,25 +1,31 @@
 
 import type { Metadata } from 'next';
-import { Nunito } from 'next/font/google'; // Changed from PT_Sans to Nunito
+import { Belleza, Alegreya_Sans } from 'next/font/google';
 import './globals.css';
-// AuthProvider is no longer needed
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
-// Instantiated Nunito instead of PT_Sans
-const nunito = Nunito({
+const belleza = Belleza({
   subsets: ['latin'],
-  weight: ['400', '700'], // Kept the same weights as previously used for PT Sans
-  variable: '--font-sans', // Kept the same CSS variable name
+  weight: '400', // Changed from ['400']
+  variable: '--font-belleza',
+  display: 'swap',
+});
+
+const alegreyaSans = Alegreya_Sans({
+  subsets: ['latin'],
+  weight: '400', // Changed from ['400', '700']
+  variable: '--font-sans',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
   title: 'PetMets',
   description: 'Connecting pet owners and their furry friends.',
   icons: {
-    icon: '/favicon.ico', // Next.js will look for src/app/favicon.ico
+    icon: '/favicon.ico',
   },
 };
 
@@ -35,10 +41,10 @@ export default function RootLayout({
       <body
         className={cn(
           'min-h-screen bg-background font-body antialiased',
-          nunito.variable // Applied nunito variable
+          alegreyaSans.variable,
+          belleza.variable
         )}
       >
-        {/* AuthProvider removed */}
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-grow">{children}</main>
