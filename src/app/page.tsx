@@ -54,6 +54,14 @@ export default async function HomePage() {
 
   const serviceCardItems: ServiceCardItemProps[] = [
     {
+      icon: <Heart className="h-8 w-8 text-primary" />,
+      title: "Match Your Pet",
+      description: "Find the perfect pet companion for pre-wedding photoshoots and joyous celebrations. Coordinate booking details seamlessly.",
+      features: ["Ideal for pre-wedding photoshoots", "Connect with compatible pet partners", "Create memorable celebration moments", "Seamless booking coordination"],
+      ctaText: "Find a Match",
+      ctaLink: externalAppUrl,
+    },
+    {
       icon: <Dog className="h-8 w-8 text-primary" />,
       title: "Pet Walking",
       description: "Professional, GPS-tracked walks for your pet when you're busy.",
@@ -83,6 +91,14 @@ export default async function HomePage() {
       description: "Expert training services to help your pet learn and grow.",
       features: ["Basic obedience training", "Behavior correction", "Private & group sessions"],
       ctaText: "Book Training",
+      ctaLink: externalAppUrl,
+    },
+    {
+      icon: <ToyBrick className="h-8 w-8 text-primary" />,
+      title: "Pet Playzone",
+      description: "Our dedicated pet play area offers a spacious garden and a refreshing swimming pool for pure fun and freedom.",
+      features: ["Spacious garden for running", "Refreshing swimming pool", "Safe and stimulating environment", "Socialize and exercise"],
+      ctaText: "Explore Playzone",
       ctaLink: externalAppUrl,
     },
   ];
@@ -198,17 +214,7 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="mb-10 text-center">
-            <div className="inline-flex items-center justify-center rounded-full bg-primary/10 p-3 mb-4">
-                <Heart className="h-10 w-10 text-primary" />
-            </div>
-            <h3 className="font-headline text-2xl font-semibold text-primary mb-2">Match Your Pet</h3>
-            <p className="max-w-2xl mx-auto text-foreground/70">
-              Find the perfect pet companion for pre-wedding photoshoots and joyous celebrations. Coordinate booking details seamlessly for those special moments. Our platform helps you connect with other pet owners to create memorable experiences.
-            </p>
-          </div>
-
-          <div className="mx-auto grid max-w-6xl items-stretch gap-8 py-12 sm:grid-cols-1 md:grid-cols-2 lg:gap-12">
+          <div className="mx-auto grid max-w-6xl items-stretch gap-8 py-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
             {serviceCardItems.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -221,17 +227,6 @@ export default async function HomePage() {
               />
             ))}
           </div>
-
-          <div className="mt-10 text-center">
-            <div className="inline-flex items-center justify-center rounded-full bg-primary/10 p-3 mb-4">
-                <ToyBrick className="h-10 w-10 text-primary" />
-            </div>
-            <h3 className="font-headline text-2xl font-semibold text-primary mb-2">Pet Playzone</h3>
-            <p className="max-w-2xl mx-auto text-foreground/70">
-              Our dedicated pet play area offers a spacious garden and a refreshing swimming pool for pure fun and freedom. Let your pets socialize, exercise, and enjoy themselves in a safe and stimulating environment.
-            </p>
-          </div>
-
         </div>
       </section>
 
@@ -338,5 +333,3 @@ function ServiceCard({ icon, title, description, features, ctaText, ctaLink }: S
     </Card>
   );
 }
-
-    
