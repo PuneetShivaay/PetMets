@@ -1,8 +1,9 @@
 
 "use client";
 import Link from 'next/link';
+import Image from 'next/image'; // Import next/image
 import { Button } from '@/components/ui/button';
-import { PawPrint, LogIn, Menu, X } from 'lucide-react';
+import { LogIn, Menu, X } from 'lucide-react'; // PawPrint removed
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
@@ -49,7 +50,14 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" passHref>
           <div className="flex items-center gap-2 cursor-pointer" aria-label="PetMets Home">
-            <PawPrint className="h-8 w-8 text-primary" />
+            <Image
+              src="/images/logo.png" // Path to your logo in the public/images folder
+              alt="PetMets Logo"
+              width={32} // IMPORTANT: Replace with your logo's actual width
+              height={32} // IMPORTANT: Replace with your logo's actual height
+              className="h-8 w-8" // Adjust styling as needed
+              data-ai-hint="company logo"
+            />
             <span className="font-headline text-2xl font-semibold text-primary">
               PetMets
             </span>
@@ -86,7 +94,14 @@ export default function Header() {
                 <SheetClose asChild>
                   <Link href="/" passHref>
                     <div className="flex items-center gap-2" onClick={closeMobileMenu}>
-                      <PawPrint className="h-7 w-7 text-primary" />
+                      <Image
+                        src="/images/logo.png" // Path to your logo
+                        alt="PetMets Logo"
+                        width={28} // IMPORTANT: Replace with your logo's actual width for mobile if different
+                        height={28} // IMPORTANT: Replace with your logo's actual height for mobile if different
+                        className="h-7 w-7"
+                        data-ai-hint="company logo"
+                      />
                       <span className="font-headline text-xl font-semibold text-primary">
                         PetMets
                       </span>
