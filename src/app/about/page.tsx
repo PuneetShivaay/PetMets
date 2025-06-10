@@ -15,25 +15,25 @@ interface Review {
 
 const reviewsData: Review[] = [
   {
-    name: "Sarah M. & Buddy",
-    avatarFallback: "SM",
+    name: "Sarah Awasthi",
+    avatarFallback: "SA",
     reviewText: "PetMets made finding a playmate for Buddy so easy! We've met some wonderful dogs and owners in our neighborhood. The app is intuitive and safe.",
     rating: 5,
-    location: "Sunnyvale, CA",
+    location: "Banglore, KA",
   },
   {
-    name: "John B. & Luna",
-    avatarFallback: "JB",
+    name: "MRs. Ritu",
+    avatarFallback: "MR",
     reviewText: "I was worried about leaving Luna when I went on vacation, but PetMets boarding was fantastic. Daily updates and a happy pup when I returned!",
     rating: 5,
-    location: "Austin, TX",
+    location: "Pune, Maharashtra",
   },
   {
-    name: "Lisa K. & Oliver",
-    avatarFallback: "LK",
+    name: "Nandani Singh",
+    avatarFallback: "NS",
     reviewText: "The training resources and connections on PetMets have been invaluable. Oliver is a much more confident and well-behaved cat now. Highly recommend!",
     rating: 4,
-    location: "Chicago, IL",
+    location: "Lucknow, UP",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function AboutPage() {
           </p>
         </div>
         <Image
-          src="https://placehold.co/550x350.png" // <-- YOU WILL UPDATE THIS SRC PATH
+          src="/images/mission.jpeg" // <-- YOU WILL UPDATE THIS SRC PATH
           alt="Illustrative image representing PetMets' mission in action"
           data-ai-hint="mission action"
           width={550}
@@ -75,7 +75,7 @@ export default function AboutPage() {
 
       <section className="mb-16 grid gap-8 md:grid-cols-2 md:gap-12 items-center">
          <Image
-          src="https://placehold.co/550x350.png" // <-- YOU WILL UPDATE THIS SRC PATH
+          src="/images/vision.jpeg" // <-- YOU WILL UPDATE THIS SRC PATH
           alt="Conceptual image visualizing PetMets' future vision"
           data-ai-hint="vision future"
           width={550}
