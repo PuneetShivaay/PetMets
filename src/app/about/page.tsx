@@ -22,8 +22,8 @@ const reviewsData: Review[] = [
     location: "Banglore, KA",
   },
   {
-    name: "MRs. Ritu",
-    avatarFallback: "MR",
+    name: "Ritu Chaudhary",
+    avatarFallback: "RC",
     reviewText: "I was worried about leaving Luna when I went on vacation, but PetMets boarding was fantastic. Daily updates and a happy pup when I returned!",
     rating: 5,
     location: "Pune, Maharashtra",
