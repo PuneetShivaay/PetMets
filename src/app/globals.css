@@ -4,11 +4,11 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-sans), sans-serif; /* Default to PT Sans for body */
+  font-family: var(--font-sans), sans-serif; /* Default to Nunito for body */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans), sans-serif; /* PT Sans for headlines */
+  font-family: var(--font-sans), sans-serif; /* Nunito for headlines */
 }
 
 @layer base {
@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
     --popover: 0 0% 100%; /* White - to match card */
     --popover-foreground: 210 10% 20%; /* Dark Slate Gray-ish */
 
-    --primary: 15 100% 59%; /* Orange-Red #FF642F */
+    --primary: 21 64% 55%; /* Custom Orange #d67644 */
     --primary-foreground: 0 0% 100%; /* White */
 
     --secondary: 208 20% 90%; /* A slightly darker/muted light gray */
@@ -39,19 +39,19 @@ h1, h2, h3, h4, h5, h6 {
 
     --border: 208 20% 88%; /* Soft gray border */
     --input: 208 20% 92%; /* Slightly lighter input backgrounds */
-    --ring: 15 100% 59%; /* Primary Orange-Red for focus rings */
+    --ring: 21 64% 55%; /* Custom Orange #d67644 for focus rings */
 
     --radius: 0.5rem;
 
     /* Sidebar specific colors - updated for new theme */
     --sidebar-background: 208 25% 92%;
     --sidebar-foreground: 210 10% 20%;
-    --sidebar-primary: 15 100% 59%;
+    --sidebar-primary: 21 64% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 175 33% 23%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 208 20% 85%;
-    --sidebar-ring: 15 100% 59%;
+    --sidebar-ring: 21 64% 55%;
   }
 
   .dark {
@@ -64,8 +64,8 @@ h1, h2, h3, h4, h5, h6 {
     --popover: 210 10% 12%; /* Kept dark for dark theme consistency */
     --popover-foreground: 208 25% 90%;
 
-    --primary: 15 100% 65%; /* Brighter Orange-Red for dark mode */
-    --primary-foreground: 15 80% 10%; /* Very dark for contrast */
+    --primary: 21 64% 61%; /* Brighter Custom Orange for dark mode */
+    --primary-foreground: 0 0% 100%; /* White for contrast */
 
     --secondary: 175 30% 28%; /* Darker teal for secondary */
     --secondary-foreground: 175 25% 85%; /* Light text on dark teal */
@@ -81,17 +81,17 @@ h1, h2, h3, h4, h5, h6 {
 
     --border: 210 10% 20%;
     --input: 210 10% 22%;
-    --ring: 15 100% 65%; /* Brighter Orange-Red */
+    --ring: 21 64% 61%; /* Brighter Custom Orange */
     
     /* Sidebar dark theme colors - updated */
     --sidebar-background: 210 10% 8%;
     --sidebar-foreground: 208 25% 90%;
-    --sidebar-primary: 15 100% 65%;
-    --sidebar-primary-foreground: 15 80% 10%;
+    --sidebar-primary: 21 64% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 175 33% 30%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 210 10% 15%;
-    --sidebar-ring: 15 100% 65%;
+    --sidebar-ring: 21 64% 61%;
   }
 }
 
