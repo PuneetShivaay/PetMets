@@ -12,6 +12,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @layer base {
+  html {
+    font-size: 93.75%; /* Effectively makes 1rem = 15px if browser default is 16px */
+  }
+
   :root {
     --background: 208 25% 95%; /* Light Gray #F0F4F7 */
     --foreground: 210 10% 20%; /* Dark Slate Gray-ish */
