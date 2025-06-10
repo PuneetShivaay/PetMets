@@ -11,25 +11,29 @@ export default function HowItWorksPage() {
       icon: <UserPlus className="h-10 w-10 text-accent" />,
       title: "Sign Up & Create Your Profile",
       description: "Joining is quick and easy! Tell us about yourself and your beloved pet(s). Add photos and details to help others get to know you.",
-      image: { src: "https://placehold.co/500x300.png", alt: "User signing up and creating a pet profile on PetMets", dataAiHint: "app signup profile" },
+      image: { 
+        src: "/images/how-it-works-signup.png.jpeg", // <--- UPDATE THIS PATH
+        alt: "User signing up and creating a pet profile on PetMets", 
+        dataAiHint: "app signup profile" 
+      },
     },
     {
       icon: <Search className="h-10 w-10 text-accent" />,
       title: "Discover & Find Matches",
       description: "Browse profiles of other pet owners in your area. Use our filters to find pets with similar play styles, breeds, or ages.",
-      image: { src: "https://placehold.co/500x300.png", alt: "Discovering pet matches and browsing profiles on PetMets", dataAiHint: "pet matching discover" },
+      image: { src: "/images/how-it-works-discover.png.jpeg", alt: "Discovering pet matches and browsing profiles on PetMets", dataAiHint: "pet matching discover" },
     },
     {
       icon: <MessageCircle className="h-10 w-10 text-accent" />,
       title: "Connect & Communicate",
       description: "Once you find a potential PetMet, send a friendly message! Arrange safe and fun meetups for your pets to socialize.",
-      image: { src: "https://placehold.co/500x300.png", alt: "Connecting and chatting with other pet owners on PetMets", dataAiHint: "app messaging connect" },
+      image: { src: "/images/how-it-works-connect.png.jpeg", alt: "Connecting and chatting with other pet owners on PetMets", dataAiHint: "app messaging connect" },
     },
     {
       icon: <Users className="h-10 w-10 text-accent" />,
       title: "Build Your Community",
       description: "Participate in local events, join groups, and share experiences. PetMets is more than an app – it's a community!",
-      image: { src: "https://placehold.co/500x300.png", alt: "Pets and owners building a community through PetMets", dataAiHint: "pets community social" },
+      image: { src: "/images/how-it-works-build-community.png.jpeg", alt: "Pets and owners building a community through PetMets", dataAiHint: "pets community social" },
     },
   ];
 

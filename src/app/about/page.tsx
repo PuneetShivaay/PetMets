@@ -64,9 +64,9 @@ export default function AboutPage() {
           </p>
         </div>
         <Image
-          src="https://placehold.co/550x350.png"
-          alt="Diverse group of pets playing happily"
-          data-ai-hint="happy pets community"
+          src="https://placehold.co/550x350.png" // <-- YOU WILL UPDATE THIS SRC PATH
+          alt="Illustrative image representing PetMets' mission in action"
+          data-ai-hint="mission action"
           width={550}
           height={350}
           className="rounded-xl shadow-lg object-cover aspect-video"
@@ -75,9 +75,9 @@ export default function AboutPage() {
 
       <section className="mb-16 grid gap-8 md:grid-cols-2 md:gap-12 items-center">
          <Image
-          src="https://placehold.co/550x350.png"
-          alt="A bright, hopeful future for pet connections"
-          data-ai-hint="future vision pets"
+          src="https://placehold.co/550x350.png" // <-- YOU WILL UPDATE THIS SRC PATH
+          alt="Conceptual image visualizing PetMets' future vision"
+          data-ai-hint="vision future"
           width={550}
           height={350}
           className="rounded-xl shadow-lg object-cover aspect-video md:order-first"
