@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import { PT_Sans } from 'next/font/google'; // Using next/font for optimal loading
+import { Nunito } from 'next/font/google'; // Changed from PT_Sans to Nunito
 import './globals.css';
 // AuthProvider is no longer needed
 import Header from '@/components/layout/Header';
@@ -8,10 +8,11 @@ import Footer from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
-const ptSans = PT_Sans({
+// Instantiated Nunito instead of PT_Sans
+const nunito = Nunito({
   subsets: ['latin'],
-  weight: ['400', '700'], 
-  variable: '--font-sans', 
+  weight: ['400', '700'], // Kept the same weights as previously used for PT Sans
+  variable: '--font-sans', // Kept the same CSS variable name
 });
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function RootLayout({
       <body
         className={cn(
           'min-h-screen bg-background font-body antialiased',
-          ptSans.variable 
+          nunito.variable // Applied nunito variable
         )}
       >
         {/* AuthProvider removed */}
