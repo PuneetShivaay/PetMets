@@ -1,6 +1,7 @@
 
-import { PawPrint, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Twitter, Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image'; // Import next/image
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,12 +10,21 @@ export default function Footer() {
     <footer className="border-t border-border/40 bg-background/95">
       <div className="container mx-auto px-4 py-8 md:px-6">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <div className="flex items-center gap-2">
-            <PawPrint className="h-7 w-7 text-primary" />
-            <span className="font-headline text-xl font-semibold text-primary">
-              PetMets
-            </span>
-          </div>
+          <Link href="/" passHref>
+            <div className="flex items-center gap-2 cursor-pointer" aria-label="PetMets Home">
+              <Image
+                src="/images/logo.png"
+                alt="PetMets Logo"
+                width={28} // You should adjust this to your logo's actual width
+                height={28} // You should adjust this to your logo's actual height
+                className="h-7 w-7" // This class can be adjusted or removed if width/height props are sufficient
+                data-ai-hint="company logo"
+              />
+              <span className="font-headline text-xl font-semibold text-primary">
+                PetMets
+              </span>
+            </div>
+          </Link>
           <p className="text-sm text-muted-foreground">
             &copy; {currentYear} PetMets. All rights reserved.
           </p>
