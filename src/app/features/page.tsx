@@ -4,6 +4,9 @@ import { PawPrint, Heart, Trees, Footprints, ClipboardList, Brain, Scissors, Hom
 import Image from "next/image";
 import type { ReactElement } from "react";
 
+//const heroImageUrl = "/images/home-image.png";
+
+
 interface Feature {
   icon: ReactElement;
   title: string;
@@ -20,43 +23,43 @@ const featuresData: Feature[] = [
     icon: <Heart className="h-8 w-8 text-accent" />,
     title: "Match Your Pet",
     description: "Celebrate love, the furry way! Our Match Your Pet feature lets you pair your dog and bitch for a heartwarming pre-wedding photoshoot. Captured in a joyful, celebration-themed setup, these moments are crafted to look nothing short of magical. Imagine floral collars, twinkling lights, and tails wagging in sync — because love deserves to be cherished, even in paw prints!",
-    image: { src: "https://placehold.co/500x300.png", alt: "Pets in a celebration themed photoshoot", hint: "dog wedding" },
+    image: { src: "/images/Romantic_pre-wedding_petmets.png", alt: "Pets in a celebration themed photoshoot", hint: "dog wedding" },
   },
   {
     icon: <Trees className="h-8 w-8 text-accent" />,
     title: "Pet Playzone",
     description: "Unleash joy at our Pet Playzone, designed for pure fun and freedom. With a spacious garden for running and a splashy swimming pool for cooling off, it’s a paradise for your four-legged companions. Let them roll on grass, chase tails, or dive into playtime with their doggy pals — while you relax and watch happiness unfold.",
-    image: { src: "https://placehold.co/500x300.png", alt: "Pets playing in a garden and pool", hint: "dogs playzone" },
+    image: { src: "/images/Pet_playzone-petmets.png", alt: "Pets playing in a garden and pool", hint: "dogs playzone" },
   },
   {
     icon: <Footprints className="h-8 w-8 text-accent" />,
     title: "Pet Walker",
     description: "For those busy days, our trusted Pet Walkers step in. Professionally trained and fully verified, they ensure your pet gets their daily dose of walks and sniffs. Featured with vivid, high-quality images, you’ll always know your buddy is in good hands — enjoying the outdoors, one leash at a time.",
-    image: { src: "https://placehold.co/500x300.png", alt: "Pet walker with a dog", hint: "dog walker" },
+    image: { src: "/images/professional_pet_walker_petmets.png", alt: "Pet walker with a dog", hint: "dog walker" },
   },
   {
     icon: <ClipboardList className="h-8 w-8 text-accent" />,
     title: "Pet Reports",
     description: "All your pet’s important documents — organized, safe, and just a tap away. From bills and vet receipts to vaccination cards and health records, our Pet Reports feature keeps everything neatly displayed. Visualized with a table spread of real-life documents, it brings clarity and peace of mind to your pet-parenting journey.",
-    image: { src: "https://placehold.co/500x300.png", alt: "Display of pet documents", hint: "pet records" },
+    image: { src: "/images/Pet_health_reports_and_documents_on-petmets.png", alt: "Display of pet documents", hint: "pet records" },
   },
   {
     icon: <Brain className="h-8 w-8 text-accent" />,
     title: "Pet Training",
     description: "Turn good dogs into great ones with our Pet Training section. Featuring real photos of trainers working with dogs, this space helps you connect with certified professionals who teach obedience, tricks, and confidence. Whether it’s leash manners or playful agility, your pet’s learning starts here.",
-    image: { src: "https://placehold.co/500x300.png", alt: "Dog training session", hint: "dog training" },
+    image: { src: "/images/Professional_dog_trainer_petmets.png", alt: "Dog training session", hint: "dog training" },
   },
   {
     icon: <Scissors className="h-8 w-8 text-accent" />,
     title: "Pet Grooming",
     description: "Make your pet look picture-pawfect! Our Pet Grooming feature showcases adorable, freshly-groomed pets photographed like furry celebrities. Connect with expert groomers who understand every coat, curl, and claw — because your pet deserves to shine.",
-    image: { src: "https://placehold.co/500x300.png", alt: "Freshly groomed pet", hint: "pet grooming" },
+    image: { src: "/images/Professional_pet_grooming_petmets.png", alt: "Freshly groomed pet", hint: "pet grooming" },
   },
   {
     icon: <Home className="h-8 w-8 text-accent" />,
     title: "Pet Boarding",
     description: "Going out of town? Let your pet enjoy a vacation of their own at our Pet Boarding spaces. Cozy, safe, and full of fellow furry friends, it’s a home away from home. With supervised care, playgroups, and nap corners, your pet stays happy — and so do you.",
-    image: { src: "https://placehold.co/500x300.png", alt: "Pets in a boarding facility", hint: "pet boarding" },
+    image: { src: "/images/Pet_boarding-petmets.png", alt: "Pets in a boarding facility", hint: "pet boarding" },
   },
 ];
 

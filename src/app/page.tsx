@@ -3,14 +3,44 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { PawPrint, Users, Search, MessageSquareHeart } from "lucide-react";
-// Removed: import { generateHeroImage } from "@/ai/flows/generate-hero-image-flow";
+import { PawPrint, Users, Search, MessageSquareHeart, MapPin, Send, CalendarCheck, ShoppingCart, ShieldCheck } from "lucide-react";
 
 export default async function HomePage() {
   const externalAppUrl = "https://app.petmets.in";
-  // The heroImageUrl is now a static path.
-  // You need to place an image named 'home-image.png' in your 'public/images/' folder.
   const heroImageUrl = "/images/home-image.png";
+
+  const whyChoosePetMetsItems = [
+    {
+      icon: <MapPin className="h-10 w-10 text-accent" />,
+      title: "GPS Pet Tracking",
+      description: "Always know where your pet is. Track real-time location when with pet walkers or at boarding facilities.",
+    },
+    {
+      icon: <Users className="h-10 w-10 text-accent" />,
+      title: "Pet Social Network",
+      description: "Connect your pet with furry friends nearby. Arrange playdates and make lasting friendships.",
+    },
+    {
+      icon: <Send className="h-10 w-10 text-accent" />,
+      title: "Community Engagement",
+      description: "Share thoughts, experiences, or fun pet moments within the PetMets community.",
+    },
+    {
+      icon: <CalendarCheck className="h-10 w-10 text-accent" />,
+      title: "Smart Reminders",
+      description: "Never miss vaccination dates, grooming appointments, walks, or meal times with our innovative reminder system.",
+    },
+    {
+      icon: <ShoppingCart className="h-10 w-10 text-accent" />,
+      title: "Premium Pet Marketplace",
+      description: "Shop high-quality, customized pet products from leashes to toys, beds, and treats.",
+    },
+    {
+      icon: <ShieldCheck className="h-10 w-10 text-accent" />,
+      title: "Verified Service Providers",
+      description: "All service providers undergo strict KYC verification to ensure your pet's safety and security.",
+    },
+  ];
 
   return (
     <div className="flex flex-col items-center">
@@ -39,7 +69,7 @@ export default async function HomePage() {
             </div>
           </div>
           <Image
-            src={heroImageUrl} // Using the static path
+            src={heroImageUrl}
             alt="Two happy dogs and five cute cats together in a vibrant outdoor setting"
             data-ai-hint="dogs cats garden"
             width={600}
@@ -82,6 +112,28 @@ export default async function HomePage() {
               title="Engage & Interact"
               description="Join group discussions, attend local events, and chat privately to strengthen your new friendships."
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose PetMets Section */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-muted-foreground">
+              Our Advantages
+            </div>
+            <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-5xl">
+              Why Choose PetMets?
+            </h2>
+            <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              We offer a comprehensive suite of features designed to enhance the lives of pets and their owners.
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
+            {whyChoosePetMetsItems.map((item, index) => (
+              <BenefitItem key={index} icon={item.icon} title={item.title} description={item.description} />
+            ))}
           </div>
         </div>
       </section>
@@ -129,5 +181,23 @@ function FeatureCard({ icon, title, description }: FeatureCardProps) {
         <CardDescription className="text-foreground/70">{description}</CardDescription>
       </CardContent>
     </Card>
+  );
+}
+
+interface BenefitItemProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+function BenefitItem({ icon, title, description }: BenefitItemProps) {
+  return (
+    <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card shadow-md hover:shadow-lg transition-shadow">
+      <div className="mb-4 rounded-full bg-primary/10 p-4">
+        {icon}
+      </div>
+      <h3 className="font-headline text-xl font-semibold text-primary mb-2">{title}</h3>
+      <p className="text-sm text-foreground/70">{description}</p>
+    </div>
   );
 }
