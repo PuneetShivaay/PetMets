@@ -53,7 +53,7 @@ export default function Footer() {
               <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary p-2 rounded-md hover:bg-muted/20 transition-colors">
                 <Facebook className="h-6 w-6" />
               </Link>
-              <Link href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary p-2 rounded-md hover:bg-muted/20 transition-colors">
+              <Link href="https://www.instagram.com/petmets/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary p-2 rounded-md hover:bg-muted/20 transition-colors">
                 <Instagram className="h-6 w-6" />
               </Link>
               <Link href="https://www.linkedin.com/company/petmets/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary p-2 rounded-md hover:bg-muted/20 transition-colors">
