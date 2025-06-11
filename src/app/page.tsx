@@ -112,7 +112,7 @@ export default async function HomePage() {
             <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
               Welcome to PetMets!
             </h1>
-            <p className="max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[600px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
               Discover a vibrant community where pet owners and their furry, scaly, or feathered friends can find companionship, share experiences, and create lasting bonds.
             </p>
             <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center md:justify-start">
@@ -152,7 +152,7 @@ export default async function HomePage() {
               <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-5xl">
                 Connect and Share with Ease
               </h2>
-              <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
                 Our platform is designed to help you find like-minded pet owners, arrange playdates, and build a supportive network.
               </p>
             </div>
@@ -187,7 +187,7 @@ export default async function HomePage() {
             <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-5xl">
               Why Choose PetMets?
             </h2>
-            <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
               We offer a comprehensive suite of features designed to enhance the lives of pets and their owners.
             </p>
           </div>
@@ -209,7 +209,7 @@ export default async function HomePage() {
             <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-5xl">
               Pet Services
             </h2>
-            <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
               Everything your pet needs in one place. Access a wide range of services through our trusted network.
             </p>
           </div>
@@ -237,7 +237,7 @@ export default async function HomePage() {
             <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary md:text-4xl/tight">
               Ready to Unleash New Friendships?
             </h2>
-            <p className="mx-auto max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="mx-auto max-w-[600px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
               Sign up today and start connecting with a community that shares your passion for pets. Your next adventure awaits!
             </p>
           </div>

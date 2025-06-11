@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-sans), sans-serif; /* Default to Alegreya Sans for body */
+  font-family: var(--font-sans), sans-serif; /* Alegreya Sans for body */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @layer base {
   html {
-    font-size: 93.75%; /* Effectively makes 1rem = 15px if browser default is 16px */
+    font-size: 100%; /* Reverted from 93.75% to make fonts larger */
   }
 
   :root {
