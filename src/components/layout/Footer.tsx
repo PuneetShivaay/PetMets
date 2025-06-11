@@ -1,5 +1,5 @@
 
-import { Twitter, Facebook, Instagram, Heart, ChevronRight } from 'lucide-react';
+import { Twitter, Facebook, Instagram, Heart, ChevronRight, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
@@ -33,9 +33,9 @@ export default function Footer() {
                 <Image
                   src="/images/logo.png"
                   alt="PetMets Logo"
-                  width={40} 
-                  height={40} 
-                  className="h-10 w-10"
+                  width={36} 
+                  height={36} 
+                  className="h-9 w-9"
                   data-ai-hint="company logo"
                 />
                 <span className="font-headline text-3xl font-bold text-primary">
@@ -55,6 +55,9 @@ export default function Footer() {
               </Link>
               <Link href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary p-2 rounded-md hover:bg-muted/20 transition-colors">
                 <Instagram className="h-6 w-6" />
+              </Link>
+              <Link href="https://www.linkedin.com/company/petmets/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary p-2 rounded-md hover:bg-muted/20 transition-colors">
+                <Linkedin className="h-6 w-6" />
               </Link>
             </div>
           </div>
@@ -76,7 +79,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Other Links Section */}
+          {/* Resources Section */}
           <div>
             <h3 className="font-headline text-lg font-semibold text-primary mb-4">Resources</h3>
             <ul className="space-y-2">
