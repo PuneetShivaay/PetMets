@@ -106,18 +106,18 @@ export default async function HomePage() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/50">
-        <div className="container mx-auto grid items-center gap-6 px-4 text-center md:grid-cols-2 md:px-6 md:text-left lg:gap-10">
-          <div className="space-y-4 animate-fade-in-right">
-            <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
+      <section className="w-full py-20 md:py-32 lg:py-40 bg-secondary/30">
+        <div className="container mx-auto grid items-center gap-8 px-4 text-center md:grid-cols-2 md:px-6 md:text-left lg:gap-12">
+          <div className="space-y-6 animate-fade-in-right">
+            <h1 className="font-headline text-5xl font-bold tracking-tight text-primary sm:text-6xl md:text-7xl">
               Welcome to PetMets!
             </h1>
             <p className="max-w-[600px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
               Discover a vibrant community where pet owners and their furry, scaly, or feathered friends can find companionship, share experiences, and create lasting bonds.
             </p>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center md:justify-start">
+            <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center md:justify-start">
               <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md">
                   Join Our Community
                   <PawPrint className="ml-2 h-5 w-5" />
                 </Button>
@@ -135,21 +135,21 @@ export default async function HomePage() {
             data-ai-hint="dogs cats garden"
             width={600}
             height={400}
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full animate-fade-in-left"
+            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full animate-fade-in-left shadow-2xl"
             priority 
           />
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="w-full py-16 md:py-24 lg:py-32">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down">
-            <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-muted-foreground">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down mb-12">
+            <div className="space-y-3">
+              <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm text-primary font-semibold">
                 Key Features
               </div>
-              <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-5xl">
+              <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
                 Connect and Share with Ease
               </h2>
               <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
@@ -159,19 +159,19 @@ export default async function HomePage() {
           </div>
           <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
             <FeatureCard
-              icon={<Users className="h-8 w-8 text-accent" />}
+              icon={<Users className="h-10 w-10 text-accent" />}
               title="Build Your Pack"
               description="Create detailed profiles for you and your pets. Share photos, stories, and preferences to find your perfect matches."
               animationDelay={200}
             />
             <FeatureCard
-              icon={<Search className="h-8 w-8 text-accent" />}
+              icon={<Search className="h-10 w-10 text-accent" />}
               title="Discover Connections"
               description="Use our smart search and matching tools to find nearby pet owners with similar interests and compatible pets."
               animationDelay={300}
             />
             <FeatureCard
-              icon={<MessageSquareHeart className="h-8 w-8 text-accent" />}
+              icon={<MessageSquareHeart className="h-10 w-10 text-accent" />}
               title="Engage & Interact"
               description="Join group discussions, attend local events, and chat privately to strengthen your new friendships."
               animationDelay={400}
@@ -181,13 +181,13 @@ export default async function HomePage() {
       </section>
 
       {/* Why Choose PetMets Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 animate-fade-in-down">
-            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-muted-foreground">
+            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary font-semibold">
               Our Advantages
             </div>
-            <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-5xl">
+            <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
               Why Choose PetMets?
             </h2>
             <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
@@ -203,13 +203,13 @@ export default async function HomePage() {
       </section>
 
       {/* Pet Services Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/50">
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 animate-fade-in-down">
-            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-muted-foreground">
+            <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm text-primary font-semibold">
               Our Services
             </div>
-            <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary sm:text-5xl">
+            <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
               Pet Services
             </h2>
             <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
@@ -235,19 +235,19 @@ export default async function HomePage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-background border-t border-border">
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30 border-t border-border/40">
         <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6 animate-fade-in-up">
-          <div className="space-y-3">
-            <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary md:text-4xl/tight">
+          <div className="space-y-4">
+            <h2 className="font-headline text-4xl font-bold tracking-tight text-primary md:text-5xl/tight">
               Ready to Unleash New Friendships?
             </h2>
             <p className="mx-auto max-w-[600px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
               Sign up today and start connecting with a community that shares your passion for pets. Your next adventure awaits!
             </p>
           </div>
-          <div className="mx-auto w-full max-w-sm space-y-2">
+          <div className="mx-auto w-full max-w-sm space-y-2 mt-4">
             <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
-              <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg">
+              <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-md" size="lg">
                 Sign Up Now
               </Button>
             </Link>
@@ -267,14 +267,14 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, title, description, animationDelay }: FeatureCardProps) {
   return (
-    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full animate-fade-in-up" style={{ animationDelay: `${animationDelay}ms` }}>
-      <CardHeader className="flex flex-col items-center text-center p-6">
-        <div className="mb-4 rounded-full bg-accent/10 p-3">
+    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full animate-fade-in-up border-0" style={{ animationDelay: `${animationDelay}ms` }}>
+      <CardHeader className="flex flex-col items-center text-center p-8">
+        <div className="mb-4 rounded-full bg-secondary/80 p-4">
           {icon}
         </div>
         <CardTitle className="font-headline text-2xl text-primary">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="p-6 pt-0 text-center">
+      <CardContent className="p-8 pt-0 text-center">
         <CardDescription className="text-foreground/70">{description}</CardDescription>
       </CardContent>
     </Card>
@@ -290,7 +290,7 @@ interface BenefitItemProps {
 
 function BenefitItem({ icon, title, description, animationDelay }: BenefitItemProps) {
   return (
-    <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card shadow-md hover:shadow-lg transition-shadow h-full animate-fade-in-up" style={{ animationDelay: `${animationDelay}ms` }}>
+    <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card shadow-md hover:shadow-lg transition-shadow h-full animate-fade-in-up border-0" style={{ animationDelay: `${animationDelay}ms` }}>
       <div className="mb-4 rounded-full bg-primary/10 p-4">
         {icon}
       </div>
@@ -312,27 +312,27 @@ interface ServiceCardProps {
 
 function ServiceCard({ icon, title, description, features, ctaText, ctaLink, animationDelay }: ServiceCardProps) {
   return (
-    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full animate-fade-in-up" style={{ animationDelay: `${animationDelay}ms` }}>
-      <CardHeader className="flex flex-row items-center gap-4 p-6 space-y-0">
+    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full animate-fade-in-up border-0" style={{ animationDelay: `${animationDelay}ms` }}>
+      <CardHeader className="flex flex-row items-center gap-4 p-8 pb-4 space-y-0">
         <div className="rounded-full bg-primary/10 p-3">
           {icon}
         </div>
         <CardTitle className="font-headline text-2xl text-primary">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="p-6 pt-0 flex-grow">
-        <p className="text-sm text-foreground/70 mb-4">{description}</p>
-        <ul className="space-y-2 mb-6">
+      <CardContent className="p-8 pt-2 flex-grow">
+        <p className="text-sm text-foreground/70 mb-6">{description}</p>
+        <ul className="space-y-3 mb-6">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center text-sm text-foreground/80">
-              <Check className="h-4 w-4 mr-2 text-green-500 flex-shrink-0" />
+              <Check className="h-5 w-5 mr-3 text-green-500 flex-shrink-0" />
               {feature}
             </li>
           ))}
         </ul>
       </CardContent>
-      <CardFooter className="p-6 pt-0 mt-auto">
+      <CardFooter className="p-8 pt-0 mt-auto">
         <Link href={ctaLink} passHref target="_blank" rel="noopener noreferrer" className="w-full">
-          <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+          <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-md">
             {ctaText}
           </Button>
         </Link>

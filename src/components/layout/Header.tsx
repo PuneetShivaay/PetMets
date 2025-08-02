@@ -14,15 +14,14 @@ const NavLink = ({ href, children, onClick }: { href: string; children: React.Re
   const isActive = pathname === href;
   return (
     <Link href={href} passHref onClick={onClick}>
-      <Button
-        variant={isActive ? "secondary" : "ghost"}
+      <span
         className={cn(
-          "justify-start w-full md:w-auto text-foreground hover:text-accent-foreground hover:bg-accent transition-colors duration-200",
+          "font-medium text-foreground/70 transition-colors hover:text-primary",
           isActive && "text-primary font-semibold"
         )}
       >
         {children}
-      </Button>
+      </span>
     </Link>
   );
 };
@@ -46,34 +45,33 @@ export default function Header() {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" passHref>
-          <div className="flex items-center gap-2 cursor-pointer" aria-label="PetMets Home">
+          <div className="flex items-center gap-3 cursor-pointer" aria-label="PetMets Home">
             <Image
               src="/images/logo.png" 
               alt="PetMets Logo"
-              width={32} 
-              height={32} 
-              className="h-8 w-8" 
+              width={36} 
+              height={36} 
+              className="h-9 w-9" 
               data-ai-hint="company logo"
-              priority // Added priority as it's likely an LCP element
+              priority
             />
-            <span className="font-headline text-2xl font-semibold text-primary">
+            <span className="font-headline text-3xl font-bold text-primary">
               PetMets
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navItems.map(item => (
            <NavLink key={item.href} href={item.href}>{item.label}</NavLink>
           ))}
           <Button
-            variant="ghost"
             onClick={handleLoginClick}
-            className="justify-start md:w-auto text-foreground hover:text-accent-foreground hover:bg-accent transition-colors duration-200"
+            className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full px-6 shadow-sm"
           >
             <LogIn className="mr-2 h-4 w-4" /> Login
           </Button>
@@ -91,7 +89,7 @@ export default function Header() {
               <SheetHeader>
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               </SheetHeader>
-              <div className="mb-6 flex items-center justify-between">
+              <div className="mb-8 flex items-center justify-between">
                 <SheetClose asChild>
                   <Link href="/" passHref>
                     <div className="flex items-center gap-2" onClick={closeMobileMenu}>
@@ -116,25 +114,25 @@ export default function Header() {
                   </Button>
                 </SheetClose>
               </div>
-              <nav className="flex flex-col space-y-3">
+              <nav className="flex flex-col space-y-4">
                 {navItems.map(item => (
                   <SheetClose asChild key={item.href}>
-                    <NavLink href={item.href} onClick={closeMobileMenu}>{item.label}</NavLink>
+                    <Link href={item.href} passHref>
+                      <span onClick={closeMobileMenu} className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors">{item.label}</span>
+                    </Link>
                   </SheetClose>
                 ))}
-                <hr className="my-2 border-border" />
+                <hr className="my-4 border-border" />
                 
-                    <Button
-                      variant="ghost"
-                      className="w-full justify-start text-foreground hover:text-accent-foreground hover:bg-accent transition-colors duration-200"
-                      onClick={() => {
-                        handleLoginClick();
-                        closeMobileMenu();
-                      }}
-                    >
-                      <LogIn className="mr-2 h-4 w-4" /> Login
-                    </Button>
-                  
+                <Button
+                  className="w-full justify-center bg-accent text-accent-foreground hover:bg-accent/90"
+                  onClick={() => {
+                    handleLoginClick();
+                    closeMobileMenu();
+                  }}
+                >
+                  <LogIn className="mr-2 h-4 w-4" /> Login
+                </Button>
               </nav>
             </SheetContent>
           </Sheet>

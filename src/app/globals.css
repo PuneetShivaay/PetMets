@@ -17,85 +17,65 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   :root {
-    --background: 208 25% 95%; /* Light Gray #F0F4F7 */
-    --foreground: 210 10% 20%; /* Dark Slate Gray-ish */
+    --background: 33 100% 97%; /* Light Orange #FFF3E0 */
+    --foreground: 24 5% 25%; /* Dark Brown-Gray */
 
     --card: 0 0% 100%; /* White */
-    --card-foreground: 210 10% 20%; /* Dark Slate Gray-ish */
+    --card-foreground: 24 5% 25%; /* Dark Brown-Gray */
 
     --popover: 0 0% 100%; /* White - to match card */
-    --popover-foreground: 210 10% 20%; /* Dark Slate Gray-ish */
+    --popover-foreground: 24 5% 25%;
 
-    --primary: 21 64% 55%; /* Custom Orange #d67644 */
+    --primary: 33 100% 50%; /* DarkOrange #FF8C00 */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 208 20% 90%; /* A slightly darker/muted light gray */
-    --secondary-foreground: 210 10% 15%; /* Darker for text on secondary */
+    --secondary: 33 80% 90%; /* Lighter shade of primary for backgrounds */
+    --secondary-foreground: 24 5% 25%;
 
-    --muted: 208 15% 85%; /* Lighter gray */
-    --muted-foreground: 210 10% 40%; /* Slightly darker muted text */
+    --muted: 33 50% 92%; /* Muted version of the background */
+    --muted-foreground: 24 5% 45%;
 
-    --accent: 175 33% 23%; /* Dark Teal #274E4A */
+    --accent: 173 24% 30%; /* Dark Teal #3d605a */
     --accent-foreground: 0 0% 100%; /* White */
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 208 20% 88%; /* Soft gray border */
-    --input: 208 20% 92%; /* Slightly lighter input backgrounds */
-    --ring: 21 64% 55%; /* Custom Orange #d67644 for focus rings */
+    --border: 33 10% 88%; /* Soft, warm gray border */
+    --input: 33 10% 92%; 
+    --ring: 33 100% 50%; /* Primary orange for focus rings */
 
-    --radius: 0.5rem;
-
-    /* Sidebar specific colors - updated for new theme */
-    --sidebar-background: 208 25% 92%;
-    --sidebar-foreground: 210 10% 20%;
-    --sidebar-primary: 21 64% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 175 33% 23%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 208 20% 85%;
-    --sidebar-ring: 21 64% 55%;
+    --radius: 0.75rem; /* Slightly larger radius for a friendlier look */
   }
 
   .dark {
-    --background: 210 10% 10%; /* Very Dark Blue/Gray */
-    --foreground: 208 25% 90%; /* Light Gray/Almost White */
+    --background: 24 5% 10%; /* Very Dark Brown/Gray */
+    --foreground: 33 10% 85%; 
 
-    --card: 210 10% 12%; /* Kept dark for dark theme consistency */
-    --card-foreground: 208 25% 90%;
+    --card: 24 5% 12%; 
+    --card-foreground: 33 10% 85%;
 
-    --popover: 210 10% 12%; /* Kept dark for dark theme consistency */
-    --popover-foreground: 208 25% 90%;
+    --popover: 24 5% 12%;
+    --popover-foreground: 33 10% 85%;
 
-    --primary: 21 64% 61%; /* Brighter Custom Orange for dark mode */
-    --primary-foreground: 0 0% 100%; /* White for contrast */
+    --primary: 33 100% 60%; /* Brighter Orange for dark mode */
+    --primary-foreground: 24 10% 5%;
 
-    --secondary: 175 30% 28%; /* Darker teal for secondary */
-    --secondary-foreground: 175 25% 85%; /* Light text on dark teal */
+    --secondary: 173 24% 20%; /* Darker teal for secondary */
+    --secondary-foreground: 173 10% 80%;
 
-    --muted: 210 10% 25%;
-    --muted-foreground: 208 15% 65%;
+    --muted: 24 5% 20%;
+    --muted-foreground: 33 10% 65%;
 
-    --accent: 175 33% 40%; /* Brighter Teal for dark mode accent */
-    --accent-foreground: 0 0% 100%; /* White */
+    --accent: 173 30% 45%; /* Brighter Teal for dark mode accent */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 60% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 10% 20%;
-    --input: 210 10% 22%;
-    --ring: 21 64% 61%; /* Brighter Custom Orange */
-    
-    /* Sidebar dark theme colors - updated */
-    --sidebar-background: 210 10% 8%;
-    --sidebar-foreground: 208 25% 90%;
-    --sidebar-primary: 21 64% 61%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 175 33% 30%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 210 10% 15%;
-    --sidebar-ring: 21 64% 61%;
+    --border: 24 5% 20%;
+    --input: 24 5% 22%;
+    --ring: 33 100% 60%;
   }
 }
 

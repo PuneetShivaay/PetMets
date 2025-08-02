@@ -22,20 +22,20 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border/40 bg-secondary/30 text-secondary-foreground">
+    <footer className="border-t border-border/40 bg-secondary/30 text-foreground">
       <div className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
         
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 mb-10">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
           {/* Branding Section */}
           <div className="lg:col-span-2 flex flex-col items-center text-center md:items-start md:text-left">
             <Link href="/" passHref>
-              <div className="flex items-center gap-3 cursor-pointer mb-3" aria-label="PetMets Home">
+              <div className="flex items-center gap-3 cursor-pointer mb-4" aria-label="PetMets Home">
                 <Image
                   src="/images/logo.png"
                   alt="PetMets Logo"
-                  width={36} 
-                  height={36} 
-                  className="h-9 w-9"
+                  width={40} 
+                  height={40} 
+                  className="h-10 w-10"
                   data-ai-hint="company logo"
                 />
                 <span className="font-headline text-3xl font-bold text-primary">
@@ -43,20 +43,20 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="max-w-md text-sm text-muted-foreground">
+            <p className="max-w-md text-base text-foreground/70">
               Connecting pets and their people, fostering a joyful community for playmates and friendships. Your trusted partner in pet happiness.
             </p>
-            <div className="mt-6 flex space-x-3">
-              <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary p-2 rounded-md hover:bg-muted/20 transition-colors">
+            <div className="mt-8 flex space-x-2">
+              <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary p-2 rounded-full hover:bg-muted/50 transition-colors">
                 <Twitter className="h-6 w-6" />
               </Link>
-              <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary p-2 rounded-md hover:bg-muted/20 transition-colors">
+              <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary p-2 rounded-full hover:bg-muted/50 transition-colors">
                 <Facebook className="h-6 w-6" />
               </Link>
-              <Link href="https://www.instagram.com/petmets/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary p-2 rounded-md hover:bg-muted/20 transition-colors">
+              <Link href="https://www.instagram.com/petmets/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary p-2 rounded-full hover:bg-muted/50 transition-colors">
                 <Instagram className="h-6 w-6" />
               </Link>
-              <Link href="https://www.linkedin.com/company/petmets/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary p-2 rounded-md hover:bg-muted/20 transition-colors">
+              <Link href="https://www.linkedin.com/company/petmets/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary p-2 rounded-full hover:bg-muted/50 transition-colors">
                 <Linkedin className="h-6 w-6" />
               </Link>
             </div>
@@ -64,13 +64,13 @@ export default function Footer() {
 
           {/* Quick Links Section */}
           <div>
-            <h3 className="font-headline text-lg font-semibold text-primary mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="font-headline text-xl font-semibold text-primary mb-4">Quick Links</h3>
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} passHref>
-                    <div className="flex items-center text-sm text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-200 group">
-                      <ChevronRight className="h-4 w-4 mr-1 text-accent/70 group-hover:text-primary transition-colors" />
+                    <div className="flex items-center text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-200 group">
+                      <ChevronRight className="h-4 w-4 mr-2 text-accent/70 group-hover:text-primary transition-colors" />
                       {link.label}
                     </div>
                   </Link>
@@ -81,13 +81,13 @@ export default function Footer() {
 
           {/* Resources Section */}
           <div>
-            <h3 className="font-headline text-lg font-semibold text-primary mb-4">Resources</h3>
-            <ul className="space-y-2">
+            <h3 className="font-headline text-xl font-semibold text-primary mb-4">Resources</h3>
+            <ul className="space-y-3">
               {otherLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} passHref>
-                     <div className="flex items-center text-sm text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-200 group">
-                      <ChevronRight className="h-4 w-4 mr-1 text-accent/70 group-hover:text-primary transition-colors" />
+                     <div className="flex items-center text-base text-muted-foreground hover:text-primary hover:translate-x-1 transition-all duration-200 group">
+                      <ChevronRight className="h-4 w-4 mr-2 text-accent/70 group-hover:text-primary transition-colors" />
                       {link.label}
                     </div>
                   </Link>
