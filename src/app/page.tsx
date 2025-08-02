@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { PawPrint, Users, Search, MessageSquareHeart, MapPin, Send, CalendarCheck, ShoppingCart, ShieldCheck, Heart, Dog, Scissors, Home as HomeIcon, GraduationCap, ToyBrick, Check } from "lucide-react";
+import { PawPrint, Users, Search, MessageSquareHeart, MapPin, Send, CalendarCheck, ShoppingCart, ShieldCheck, Heart, Dog, Scissors, Home as HomeIcon, GraduationCap, ToyBrick, Check, PlayCircle } from "lucide-react";
 import type { ReactNode } from "react";
 
 export default async function HomePage() {
@@ -202,11 +202,40 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Pet Services Section */}
+      {/* Video Section */}
       <section className="w-full py-16 md:py-24 lg:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 animate-fade-in-down">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down mb-12">
             <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm text-primary font-semibold">
+              See It In Action
+            </div>
+            <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+              Watch Our Story
+            </h2>
+            <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
+              Get a glimpse into the joyful connections and happy moments created every day on PetMets.
+            </p>
+          </div>
+          <div className="mx-auto max-w-4xl animate-fade-in-up" style={{ animationDelay: `300ms` }}>
+            <div className="aspect-video overflow-hidden rounded-xl shadow-2xl border">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/your_video_id_here"
+                title="PetMets - See It In Action"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pet Services Section */}
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 animate-fade-in-down">
+            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary font-semibold">
               Our Services
             </div>
             <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
@@ -235,7 +264,7 @@ export default async function HomePage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30 border-t border-border/40">
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-background border-t border-border/40">
         <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6 animate-fade-in-up">
           <div className="space-y-4">
             <h2 className="font-headline text-4xl font-bold tracking-tight text-primary md:text-5xl/tight">
