@@ -221,7 +221,7 @@ export default async function HomePage() {
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="animate-fade-in-right">
               <Image
-                src="https://placehold.co/500x700.png"
+                src="/images/Know More About PetMets.png"
                 alt="PetMets app being used on a phone"
                 data-ai-hint="app mobile screenshot"
                 width={500}
@@ -231,14 +231,18 @@ export default async function HomePage() {
             </div>
             <div className="animate-fade-in-left">
               <div className="aspect-[9/16] max-w-sm mx-auto overflow-hidden rounded-xl shadow-2xl border">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/AFTp5YVwvac"
+                <video
+                  className="w-full h-full object-cover"
+                  src="/videos/petmets-promo.mp4"
                   title="PetMets - See It In Action"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
@@ -383,3 +387,5 @@ function ServiceCard({ icon, title, description, features, ctaText, ctaLink, ani
     </Card>
   );
 }
+
+    
