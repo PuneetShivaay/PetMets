@@ -181,6 +181,22 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+      
+      {/* Standalone Image Section */}
+      <section className="w-full py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="animate-fade-in-up">
+            <Image
+              src="/images/Know More About PetMets.png"
+              alt="PetMets app being used on a phone"
+              data-ai-hint="app mobile screenshot"
+              width={1200}
+              height={800}
+              className="rounded-xl shadow-2xl mx-auto w-full max-w-4xl h-auto object-contain"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Why Choose PetMets Section */}
       <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
@@ -218,32 +234,20 @@ export default async function HomePage() {
               Get a glimpse into the joyful connections and happy moments created every day on PetMets.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div className="animate-fade-in-right">
-              <Image
-                src="/images/Know More About PetMets.png"
-                alt="PetMets app being used on a phone"
-                data-ai-hint="app mobile screenshot"
-                width={500}
-                height={700}
-                className="rounded-xl shadow-2xl mx-auto"
-              />
-            </div>
-            <div className="animate-fade-in-left">
-              <div className="aspect-square mx-auto overflow-hidden rounded-xl shadow-2xl border">
-                <video
-                  className="w-full h-full object-cover"
-                  src="/videos/petmetsvideo.mp4"
-                  title="PetMets - See It In Action"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controls
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
+          <div className="animate-fade-in-up">
+            <div className="aspect-square max-w-xl mx-auto overflow-hidden rounded-xl shadow-2xl border">
+              <video
+                className="w-full h-full object-cover"
+                src="/videos/petmetsvideo.mp4"
+                title="PetMets - See It In Action"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
@@ -388,4 +392,6 @@ function ServiceCard({ icon, title, description, features, ctaText, ctaLink, ani
   );
 }
     
+    
+
     
