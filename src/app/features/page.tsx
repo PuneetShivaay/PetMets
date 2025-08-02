@@ -86,7 +86,7 @@ export default function FeaturesPage() {
                 data-ai-hint={feature.image.hint}
                 width={500}
                 height={300}
-                className="rounded-t-md object-contain aspect-video w-full"
+                className="rounded-t-md object-contain w-full"
               />
             </CardHeader>
             <div className="p-6 flex-grow flex flex-col">

@@ -122,7 +122,7 @@ export default function HowItWorksPage() {
                   data-ai-hint={step.image.dataAiHint}
                   width={550}
                   height={350}
-                  className="rounded-xl shadow-lg object-contain aspect-video bg-muted/30"
+                  className="rounded-xl shadow-lg object-contain bg-muted/30"
                 />
               </div>
               <div className="md:w-1/2">

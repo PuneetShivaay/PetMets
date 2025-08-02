@@ -129,7 +129,7 @@ export default async function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="mx-auto aspect-video overflow-hidden rounded-xl object-center sm:w-full animate-fade-in-left shadow-2xl bg-muted/30">
+          <div className="mx-auto overflow-hidden rounded-xl object-center sm:w-full animate-fade-in-left shadow-2xl bg-muted/30">
             <Image
               src={heroImageUrl}
               alt="Two happy dogs and five cute cats together in a vibrant outdoor setting"
