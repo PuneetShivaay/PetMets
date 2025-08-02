@@ -1,45 +1,43 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { PawPrint, Users, Search, MessageSquareHeart, MapPin, Send, CalendarCheck, ShoppingCart, ShieldCheck, Heart, Dog, Scissors, Home as HomeIcon, GraduationCap, ToyBrick, Check, PlayCircle } from "lucide-react";
+import { PawPrint, Users, Search, Dog, Scissors, Home as HomeIcon, GraduationCap, ToyBrick, ArrowRight, ShieldCheck, Heart, MessageSquare, Play, AppStore, PlayStore, StepForward, UserPlus, CheckCircle, Menu, Download } from "lucide-react";
 import type { ReactNode } from "react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+
+const PlayStoreIcon = () => (
+  <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M21.5,12.5c0.3-0.8,0.5-1.6,0.5-2.5c0-0.9-0.2-1.7-0.5-2.5L14.7,12L21.5,12.5z M3.5,12c0,3.3,1.9,6.2,4.6,7.6l6.3-6.3l-6.3-6.3C5.4,5.8,3.5,8.7,3.5,12z M12.5,3.5c-0.8-0.3-1.6-0.5-2.5-0.5c-0.9,0-1.7,0.2-2.5,0.5l4.5,4.5L12.5,3.5z M12.5,20.5c0.8,0.3,1.6,0.5,2.5,0.5c0.9,0-1.7-0.2-2.5-0.5l-4.5-4.5L12.5,20.5z M19.4,7.6L14,2.2C13.1,2.1,12.1,2,11,2c-2.4,0-4.6,0.7-6.5,1.8L12,11.3L19.4,7.6z M4.5,14.2l7.5,7.5c1.9,1.1,4.1,1.8,6.5,1.8c1.1,0,2.1-0.1,3-0.3l-7.4-3.7L4.5,14.2z"/>
+  </svg>
+);
+const AppStoreIcon = () => (
+  <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.6,15.6c-0.5,1.5-1.5,2.9-3,2.9s-1.5-0.8-3-0.8s-2.1,0.8-3.3,0.8c-1.5,0-2.8-1.5-3.8-3.6c-1.4-2.8-0.7-6.9,1.2-9.1C3.6,5.3,5,4.4,6.5,4.4c1.3,0,2.4,0.8,3.3,0.8c0.8,0,1.8-0.8,3.2-0.8c1.3,0,2.8,0.9,3.6,2.1c-1.4,0.9-2.3,2.4-2.3,4.1C15.3,13.1,16.2,14.5,17.6,15.6z M15.5,3.5C15,2.6,13.9,2,12.8,2c-0.1,0-0.2,0-0.3,0c-0.8,0-1.6,0.4-2.1,0.4c-0.6,0-1.4-0.4-2.2-0.4c-1.5,0-2.8,0.9-3.6,2.1C4,5,3.5,6,3.5,7c0,1,0.4,2,0.9,2.8c0.5,0.8,1.2,1.4,2.1,1.4c0.1,0,0.2,0,0.3,0c0.8,0,1.6-0.4,2.2-0.4c0.5,0,1.3,0.4,2.1,0.4c1.5,0,2.8-0.9,3.6,2.1c0.5-0.8,0.9-1.8,0.9-2.8C16,6.3,15.8,4.6,15.5,3.5z"/>
+  </svg>
+);
+
 
 export default async function HomePage() {
   const externalAppUrl = "https://app.petmets.in";
-  const heroImageUrl = "/images/home-image.png"; 
 
-  const whyChoosePetMetsItems = [
+  const howItWorksSteps = [
     {
-      icon: <MapPin className="h-10 w-10 text-accent" />,
-      title: "GPS Pet Tracking",
-      description: "Always know where your pet is. Track real-time location when with pet walkers or at boarding facilities.",
+      icon: <UserPlus className="h-10 w-10 text-accent" />,
+      title: "Create Profile",
+      description: "Sign up and create detailed profiles for you and your pet to find the best connections.",
     },
     {
-      icon: <Users className="h-10 w-10 text-accent" />,
-      title: "Pet Social Network",
-      description: "Connect your pet with furry friends nearby. Arrange playdates and make lasting friendships.",
+      icon: <Search className="h-10 w-10 text-accent" />,
+      title: "Find Connections",
+      description: "Discover nearby pet owners, search for playmates, and build your local pet community.",
     },
     {
-      icon: <Send className="h-10 w-10 text-accent" />,
-      title: "Community Engagement",
-      description: "Share thoughts, experiences, or fun pet moments within the PetMets community.",
-    },
-    {
-      icon: <CalendarCheck className="h-10 w-10 text-accent" />,
-      title: "Smart Reminders",
-      description: "Never miss vaccination dates, grooming appointments, walks, or meal times with our innovative reminder system.",
-    },
-    {
-      icon: <ShoppingCart className="h-10 w-10 text-accent" />,
-      title: "Premium Pet Marketplace",
-      description: "Shop high-quality, customized pet products from leashes to toys, beds, and treats.",
-    },
-    {
-      icon: <ShieldCheck className="h-10 w-10 text-accent" />,
-      title: "Verified Service Providers",
-      description: "All service providers undergo strict KYC verification to ensure your pet's safety and security.",
+      icon: <Menu className="h-10 w-10 text-accent" />,
+      title: "Explore Services",
+      description: "Access a wide range of trusted pet services, from grooming to vet care, all in one place.",
     },
   ];
 
@@ -47,93 +45,108 @@ export default async function HomePage() {
     icon: ReactNode;
     title: string;
     description: string;
-    features: string[];
-    ctaText: string;
-    ctaLink: string;
   }
 
   const serviceCardItems: ServiceCardItemProps[] = [
-    {
+     {
       icon: <Heart className="h-8 w-8 text-primary" />,
       title: "Match Your Pet",
-      description: "Find the perfect pet companion for pre-wedding photoshoots and joyous celebrations. Coordinate booking details seamlessly.",
-      features: ["Ideal for pre-wedding photoshoots", "Connect with compatible pet partners", "Create memorable celebration moments", "Seamless booking coordination"],
-      ctaText: "Find a Match",
-      ctaLink: externalAppUrl,
+      description: "Find the perfect pet companion for pre-wedding photoshoots and joyous celebrations.",
     },
     {
       icon: <Dog className="h-8 w-8 text-primary" />,
       title: "Pet Walking",
-      description: "Professional, GPS-tracked walks for your pet when you're busy.",
-      features: ["Real-time GPS tracking", "Verified, trained walkers", "Walk reports & photos"],
-      ctaText: "Book a Walker",
-      ctaLink: externalAppUrl,
+      description: "Book professional, GPS-tracked walks for your pet when you're busy.",
     },
     {
       icon: <Scissors className="h-8 w-8 text-primary" />,
       title: "Pet Grooming",
-      description: "Professional grooming services to keep your pet looking their best.",
-      features: ["Bath & full grooming", "Nail trimming & ear cleaning", "Breed-specific styling"],
-      ctaText: "Book Grooming",
-      ctaLink: externalAppUrl,
+      description: "Connect with expert groomers to keep your pet looking and feeling their best.",
     },
     {
       icon: <HomeIcon className="h-8 w-8 text-primary" />,
       title: "Pet Boarding",
-      description: "Safe, comfortable boarding when you need to be away from home.",
-      features: ["24/7 supervision", "Daily updates & photos", "Playtime & exercise included"],
-      ctaText: "Reserve Boarding",
-      ctaLink: externalAppUrl,
+      description: "Find safe, comfortable, and verified boarding facilities for when you're away.",
     },
     {
       icon: <GraduationCap className="h-8 w-8 text-primary" />,
       title: "Pet Training",
-      description: "Expert training services to help your pet learn and grow.",
-      features: ["Basic obedience training", "Behavior correction", "Private & group sessions"],
-      ctaText: "Book Training",
-      ctaLink: externalAppUrl,
+      description: "Access expert trainers to help your pet learn new skills and behaviors.",
     },
     {
       icon: <ToyBrick className="h-8 w-8 text-primary" />,
       title: "Pet Playzone",
-      description: "Our dedicated pet play area offers a spacious garden and a refreshing swimming pool for pure fun and freedom.",
-      features: ["Spacious garden for running", "Refreshing swimming pool", "Safe and stimulating environment", "Socialize and exercise"],
-      ctaText: "Explore Playzone",
-      ctaLink: externalAppUrl,
+      description: "Discover dedicated play areas with gardens and pools for fun and exercise.",
     },
+  ];
+
+  const benefits = [
+    {
+      icon: <ShieldCheck className="h-10 w-10 text-accent" />,
+      title: "Safe & Verified Professionals",
+      description: "Your pet’s safety is our top priority. All service providers on PetMets undergo strict verification so you can have peace of mind.",
+    },
+    {
+      icon: <Users className="h-10 w-10 text-accent" />,
+      title: "Pet-Centered Community",
+      description: "Connect with a vibrant community of pet lovers. Share advice, arrange playdates, and build lasting friendships for you and your pet.",
+    },
+    {
+      icon: <PawPrint className="h-10 w-10 text-accent" />,
+      title: "All-in-One Pet Management",
+      description: "From health records and reminders to booking services and socializing, manage your pet’s entire world from a single, easy-to-use app.",
+    },
+  ];
+
+  const faqItems = [
+    {
+      question: "Is it free to use PetMets?",
+      answer: "Yes, the PetMets app is free to download and use for finding matches and connecting with the community. Charges may apply for booking specific services from our verified providers."
+    },
+    {
+      question: "What services can I book?",
+      answer: "You can book a wide range of services including pet grooming, boarding, walking, training, and even in-home vet consultations. We are continuously expanding our offerings."
+    },
+    {
+      question: "Is my pet’s data safe?",
+      answer: "Absolutely. We use secure systems to protect all your data. Your pet's information is only shared with your consent, for example, when you connect with other users or book a service."
+    },
+    {
+      question: "How do I contact support?",
+      answer: "You can contact our support team directly through the app's 'Help & Support' section or by emailing us at support@petmets.in. We're always here to help!"
+    }
   ];
 
   return (
     <div className="flex flex-col items-center">
-      {/* Hero Section */}
+      {/* Section 1: Hero Banner */}
       <section className="w-full py-20 md:py-32 lg:py-40 bg-secondary/30">
         <div className="container mx-auto grid items-center gap-8 px-4 text-center md:grid-cols-2 md:px-6 md:text-left lg:gap-12">
           <div className="space-y-6 animate-fade-in-right">
             <h1 className="font-headline text-5xl font-bold tracking-tight text-primary sm:text-6xl md:text-7xl">
-              Welcome to PetMets!
+              Simplify Pet Parenting with PetMets
             </h1>
             <p className="max-w-[600px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
-              Discover a vibrant community where pet owners and their furry, scaly, or feathered friends can find companionship, share experiences, and create lasting bonds.
+              Book trusted services, connect with pet lovers, and manage your pet’s world—all in one app.
             </p>
-            <div className="flex flex-col gap-3 min-[400px]:flex-row justify-center md:justify-start">
+            <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center md:justify-start">
               <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md">
-                  Join Our Community
-                  <PawPrint className="ml-2 h-5 w-5" />
+                   <PlayStoreIcon /> Download for Android
                 </Button>
               </Link>
-              <Link href="/how-it-works" passHref>
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  Learn More
+              <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
+                 <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                   <AppStoreIcon /> Download for iOS
                 </Button>
               </Link>
             </div>
           </div>
           <div className="mx-auto overflow-hidden rounded-xl object-center sm:w-full animate-fade-in-left shadow-2xl bg-muted/30">
             <Image
-              src={heroImageUrl}
-              alt="Two happy dogs and five cute cats together in a vibrant outdoor setting"
-              data-ai-hint="dogs cats garden"
+              src="/images/home-image.png"
+              alt="Happy pets using the PetMets app"
+              data-ai-hint="happy pets app"
               width={600}
               height={400}
               className="w-full h-full object-contain"
@@ -143,86 +156,114 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Section 2: How PetMets Works */}
       <section className="w-full py-16 md:py-24 lg:py-32">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down mb-12">
-            <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm text-primary font-semibold">
-                Key Features
-              </div>
-              <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-                Connect and Share with Ease
-              </h2>
-              <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
-                Our platform is designed to help you find like-minded pet owners, arrange playdates, and build a supportive network.
-              </p>
-            </div>
+            <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+              Get Started in Three Simple Steps
+            </h2>
+            <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
+              Joining our community is quick and easy. Follow these steps to begin your journey.
+            </p>
           </div>
           <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
-            <FeatureCard
-              icon={<Users className="h-10 w-10 text-accent" />}
-              title="Build Your Pack"
-              description="Create detailed profiles for you and your pets. Share photos, stories, and preferences to find your perfect matches."
-              animationDelay={200}
-            />
-            <FeatureCard
-              icon={<Search className="h-10 w-10 text-accent" />}
-              title="Discover Connections"
-              description="Use our smart search and matching tools to find nearby pet owners with similar interests and compatible pets."
-              animationDelay={300}
-            />
-            <FeatureCard
-              icon={<MessageSquareHeart className="h-10 w-10 text-accent" />}
-              title="Engage & Interact"
-              description="Join group discussions, attend local events, and chat privately to strengthen your new friendships."
-              animationDelay={400}
-            />
+            {howItWorksSteps.map((step, index) => (
+              <div key={index} className="flex flex-col items-center text-center gap-4 animate-fade-in-up" style={{ animationDelay: `${200 + index * 100}ms` }}>
+                <div className="flex items-center justify-center h-20 w-20 rounded-full bg-secondary/80 border-2 border-primary/20 mb-4">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 text-primary">
+                    {step.icon}
+                  </div>
+                </div>
+                <h3 className="font-headline text-2xl font-semibold text-primary">{step.title}</h3>
+                <p className="text-foreground/70">{step.description}</p>
+              </div>
+            ))}
           </div>
+           <div className="text-center mt-8 animate-fade-in-up" style={{ animationDelay: '600ms' }}>
+              <Link href="/how-it-works" passHref>
+                <Button size="lg" variant="outline">
+                  See the Full Guide <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
         </div>
       </section>
-      
-      {/* Why Choose PetMets Section */}
+
+      {/* Section 3: Pet Services */}
       <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 animate-fade-in-down">
-            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary font-semibold">
-              Our Advantages
-            </div>
             <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-              Why Choose PetMets?
+              Comprehensive Pet Services
             </h2>
             <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
-              We offer a comprehensive suite of features designed to enhance the lives of pets and their owners.
+              Everything your pet needs, right at your fingertips. Access a wide range of trusted services through our verified network.
             </p>
           </div>
-          <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
-            {whyChoosePetMetsItems.map((item, index) => (
-              <BenefitItem key={index} icon={item.icon} title={item.title} description={item.description} animationDelay={200 + index * 100} />
+          <div className="mx-auto grid max-w-6xl items-stretch gap-8 py-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+            {serviceCardItems.map((service, index) => (
+               <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full animate-fade-in-up border-0" style={{ animationDelay: `${200 + index * 100}ms` }}>
+                <CardHeader className="flex flex-row items-center gap-4 p-6 pb-4 space-y-0">
+                  <div className="rounded-full bg-primary/10 p-3">
+                    {service.icon}
+                  </div>
+                  <CardTitle className="font-headline text-xl text-primary">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-6 pt-2 flex-grow">
+                  <p className="text-sm text-foreground/70">{service.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Video Section */}
-      <section className="w-full py-16 md:py-24 lg:py-32 bg-background">
+      {/* Section 4: Benefits for Pet Parents */}
+      <section className="w-full py-16 md:py-24 lg:py-32">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down mb-12">
-            <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm text-primary font-semibold">
-              See It In Action
-            </div>
             <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-              Know More About PetMets
+              Designed for You and Your Pet
             </h2>
             <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
-              Get a glimpse into the joyful connections and happy moments created every day on PetMets.
+              We focus on what matters most: safety, community, and convenience.
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
+            {benefits.map((benefit, index) => (
+              <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full animate-fade-in-up border-0" style={{ animationDelay: `${200 + index * 100}ms` }}>
+                <CardHeader className="flex flex-col items-center text-center p-8">
+                  <div className="mb-4 rounded-full bg-secondary/80 p-4">
+                    {benefit.icon}
+                  </div>
+                  <CardTitle className="font-headline text-2xl text-primary">{benefit.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-8 pt-0 text-center">
+                  <p className="text-foreground/70">{benefit.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Video Section */}
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down mb-12">
+            <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+              See PetMets in Action
+            </h2>
+            <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
+              Get a glimpse into the joyful connections and happy moments created every day on our platform.
             </p>
           </div>
           <div className="animate-fade-in-up">
             <div className="aspect-square max-w-xl mx-auto overflow-hidden rounded-xl shadow-2xl border">
               <video
                 className="w-full h-full object-cover"
-                src="/videos/petmetsvideo.mp4"
+                src="/videos/petmets-promo.mp4"
                 title="PetMets - See It In Action"
                 autoPlay
                 loop
@@ -237,41 +278,9 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Pet Services Section */}
-      <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 animate-fade-in-down">
-            <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary font-semibold">
-              Our Services
-            </div>
-            <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-              Pet Services
-            </h2>
-            <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
-              Everything your pet needs in one place. Access a wide range of services through our trusted network.
-            </p>
-          </div>
-
-          <div className="mx-auto grid max-w-6xl items-stretch gap-8 py-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-            {serviceCardItems.map((service, index) => (
-              <ServiceCard
-                key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                features={service.features}
-                ctaText={service.ctaText}
-                ctaLink={service.ctaLink}
-                animationDelay={200 + index * 100}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="w-full py-16 md:py-24 lg:py-32 bg-background border-t border-border/40">
-        <div className="container mx-auto grid items-center justify-center gap-8 px-4 md:px-6 md:grid-cols-2 lg:gap-16 animate-fade-in-up">
+      {/* Section 6: Final CTA Section */}
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-background">
+        <div className="container mx-auto grid items-center justify-center gap-8 px-4 md:px-6 md:grid-cols-2 lg:gap-16">
           <div className="animate-fade-in-right">
             <Image
               src="/images/Know More About PetMets.png"
@@ -282,110 +291,53 @@ export default async function HomePage() {
               className="rounded-xl shadow-2xl mx-auto w-full max-w-md h-auto object-contain"
             />
           </div>
-          <div className="space-y-4 text-center md:text-left animate-fade-in-left">
+          <div className="space-y-6 text-center md:text-left animate-fade-in-left">
             <h2 className="font-headline text-4xl font-bold tracking-tight text-primary md:text-5xl/tight">
-              Ready to Unleash New Friendships?
+              Start Your PetMets Journey Today!
             </h2>
             <p className="mx-auto max-w-[600px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed md:mx-0">
-              Sign up today and start connecting with a community that shares your passion for pets. Your next adventure awaits!
+              Join 10,000+ happy pet parents across India. Download the app now and unlock a new world of possibilities for you and your pet.
             </p>
-            <div className="mx-auto w-full max-w-sm space-y-2 mt-6 md:mx-0">
+            <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center md:justify-start">
+               <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md">
+                   <PlayStoreIcon /> Download for Android
+                </Button>
+              </Link>
               <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
-                <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-md" size="lg">
-                  Sign Up Now
+                 <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                   <AppStoreIcon /> Download for iOS
                 </Button>
               </Link>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Section 7: FAQ Section */}
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
+        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+           <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down mb-12">
+            <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
+              Have questions? We've got answers. Here are some of the most common queries from our community.
+            </p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {faqItems.map((faq, index) => (
+              <AccordionItem value={`item-${index+1}`} key={index} className="bg-background rounded-lg mb-4 px-6 shadow-md border-b-0 animate-fade-in-up" style={{ animationDelay: `${200 + index * 100}ms` }}>
+                <AccordionTrigger className="font-headline text-lg text-primary hover:no-underline">{faq.question}</AccordionTrigger>
+                <AccordionContent className="text-base text-foreground/80">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
     </div>
   );
-}
-
-interface FeatureCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  animationDelay?: number;
-}
-
-function FeatureCard({ icon, title, description, animationDelay }: FeatureCardProps) {
-  return (
-    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full animate-fade-in-up border-0" style={{ animationDelay: `${animationDelay}ms` }}>
-      <CardHeader className="flex flex-col items-center text-center p-8">
-        <div className="mb-4 rounded-full bg-secondary/80 p-4">
-          {icon}
-        </div>
-        <CardTitle className="font-headline text-2xl text-primary">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="p-8 pt-0 text-center">
-        <CardDescription className="text-foreground/70">{description}</CardDescription>
-      </CardContent>
-    </Card>
-  );
-}
-
-interface BenefitItemProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  animationDelay?: number;
-}
-
-function BenefitItem({ icon, title, description, animationDelay }: BenefitItemProps) {
-  return (
-    <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card shadow-md hover:shadow-lg transition-shadow h-full animate-fade-in-up border-0" style={{ animationDelay: `${animationDelay}ms` }}>
-      <div className="mb-4 rounded-full bg-primary/10 p-4">
-        {icon}
-      </div>
-      <h3 className="font-headline text-xl font-semibold text-primary mb-2">{title}</h3>
-      <p className="text-sm text-foreground/70">{description}</p>
-    </div>
-  );
-}
-
-interface ServiceCardProps {
-  icon: ReactNode;
-  title:string;
-  description: string;
-  features: string[];
-  ctaText: string;
-  ctaLink: string;
-  animationDelay?: number;
-}
-
-function ServiceCard({ icon, title, description, features, ctaText, ctaLink, animationDelay }: ServiceCardProps) {
-  return (
-    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full animate-fade-in-up border-0" style={{ animationDelay: `${animationDelay}ms` }}>
-      <CardHeader className="flex flex-row items-center gap-4 p-8 pb-4 space-y-0">
-        <div className="rounded-full bg-primary/10 p-3">
-          {icon}
-        </div>
-        <CardTitle className="font-headline text-2xl text-primary">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="p-8 pt-2 flex-grow">
-        <p className="text-sm text-foreground/70 mb-6">{description}</p>
-        <ul className="space-y-3 mb-6">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-center text-sm text-foreground/80">
-              <Check className="h-5 w-5 mr-3 text-green-500 flex-shrink-0" />
-              {feature}
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-      <CardFooter className="p-8 pt-0 mt-auto">
-        <Link href={ctaLink} passHref target="_blank" rel="noopener noreferrer" className="w-full">
-          <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-md">
-            {ctaText}
-          </Button>
-        </Link>
-      </CardFooter>
-    </Card>
-  );
-}
-    
-    
 
     
