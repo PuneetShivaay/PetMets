@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { PawPrint, Users, Search, Dog, Scissors, Home as HomeIcon, GraduationCap, ToyBrick, ArrowRight, ShieldCheck, Heart, MessageSquare, Play, AppStore, PlayStore, StepForward, UserPlus, CheckCircle, Menu, Download } from "lucide-react";
+import { PawPrint, Users, Search, Dog, Scissors, Home as HomeIcon, GraduationCap, ToyBrick, ArrowRight, ShieldCheck, Heart, MessageSquare, Play, AppStore, PlayStore, StepForward, UserPlus, CheckCircle, Menu, Download, Check } from "lucide-react";
 import type { ReactNode } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -45,38 +45,85 @@ export default async function HomePage() {
     icon: ReactNode;
     title: string;
     description: string;
+    features: string[];
+    buttonText: string;
+    buttonLink: string;
   }
 
   const serviceCardItems: ServiceCardItemProps[] = [
-     {
+    {
       icon: <Heart className="h-8 w-8 text-primary" />,
       title: "Match Your Pet",
-      description: "Find the perfect pet companion for pre-wedding photoshoots and joyous celebrations.",
+      description: "Find the perfect pet companion for pre-wedding photoshoots and joyous celebrations. Coordinate booking details seamlessly.",
+      features: [
+        "Ideal for pre-wedding photoshoots",
+        "Connect with compatible pet partners",
+        "Create memorable celebration moments",
+        "Seamless booking coordination",
+      ],
+      buttonText: "Find a Match",
+      buttonLink: "/features",
     },
     {
       icon: <Dog className="h-8 w-8 text-primary" />,
       title: "Pet Walking",
-      description: "Book professional, GPS-tracked walks for your pet when you're busy.",
+      description: "Professional, GPS-tracked walks for your pet when you're busy.",
+      features: [
+        "Real-time GPS tracking",
+        "Verified, trained walkers",
+        "Walk reports & photos",
+      ],
+      buttonText: "Book a Walker",
+      buttonLink: "/features",
     },
     {
       icon: <Scissors className="h-8 w-8 text-primary" />,
       title: "Pet Grooming",
-      description: "Connect with expert groomers to keep your pet looking and feeling their best.",
+      description: "Professional grooming services to keep your pet looking their best.",
+      features: [
+        "Bath & full grooming",
+        "Nail trimming & ear cleaning",
+        "Breed-specific styling",
+      ],
+      buttonText: "Book Grooming",
+      buttonLink: "/features",
     },
     {
       icon: <HomeIcon className="h-8 w-8 text-primary" />,
       title: "Pet Boarding",
-      description: "Find safe, comfortable, and verified boarding facilities for when you're away.",
+      description: "Safe, comfortable boarding when you need to be away from home.",
+      features: [
+        "24/7 supervision",
+        "Daily updates & photos",
+        "Playtime & exercise included",
+      ],
+      buttonText: "Reserve Boarding",
+      buttonLink: "/features",
     },
     {
       icon: <GraduationCap className="h-8 w-8 text-primary" />,
       title: "Pet Training",
-      description: "Access expert trainers to help your pet learn new skills and behaviors.",
+      description: "Expert training services to help your pet learn and grow.",
+      features: [
+        "Basic obedience training",
+        "Behavior correction",
+        "Private & group sessions",
+      ],
+      buttonText: "Book Training",
+      buttonLink: "/features",
     },
     {
       icon: <ToyBrick className="h-8 w-8 text-primary" />,
       title: "Pet Playzone",
-      description: "Discover dedicated play areas with gardens and pools for fun and exercise.",
+      description: "Our dedicated pet play area offers a spacious garden and a refreshing swimming pool for pure fun and freedom.",
+      features: [
+        "Spacious garden for running",
+        "Refreshing swimming pool",
+        "Safe and stimulating environment",
+        "Socialize and exercise",
+      ],
+      buttonText: "Explore Playzone",
+      buttonLink: "/features",
     },
   ];
 
@@ -201,7 +248,7 @@ export default async function HomePage() {
               Everything your pet needs, right at your fingertips. Access a wide range of trusted services through our verified network.
             </p>
           </div>
-          <div className="mx-auto grid max-w-6xl items-stretch gap-8 py-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+          <div className="mx-auto grid max-w-7xl items-stretch gap-8 py-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {serviceCardItems.map((service, index) => (
                <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full animate-fade-in-up border-0" style={{ animationDelay: `${200 + index * 100}ms` }}>
                 <CardHeader className="flex flex-row items-center gap-4 p-6 pb-4 space-y-0">
@@ -211,8 +258,23 @@ export default async function HomePage() {
                   <CardTitle className="font-headline text-xl text-primary">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="p-6 pt-2 flex-grow">
-                  <p className="text-sm text-foreground/70">{service.description}</p>
+                  <p className="text-sm text-foreground/80 mb-4">{service.description}</p>
+                  <ul className="space-y-2 text-sm text-foreground/70">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <Check className="h-4 w-4 text-green-500" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
+                <div className="p-6 pt-0 mt-auto">
+                   <Link href={service.buttonLink} passHref>
+                    <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                      {service.buttonText}
+                    </Button>
+                  </Link>
+                </div>
               </Card>
             ))}
           </div>
@@ -232,14 +294,14 @@ export default async function HomePage() {
           </div>
           <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full animate-fade-in-up border-0" style={{ animationDelay: `${200 + index * 100}ms` }}>
-                <CardHeader className="flex flex-col items-center text-center p-8">
+              <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full animate-fade-in-up border-0 text-center" style={{ animationDelay: `${200 + index * 100}ms` }}>
+                <CardHeader className="flex flex-col items-center p-8">
                   <div className="mb-4 rounded-full bg-secondary/80 p-4">
                     {benefit.icon}
                   </div>
                   <CardTitle className="font-headline text-2xl text-primary">{benefit.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="p-8 pt-0 text-center">
+                <CardContent className="p-8 pt-0">
                   <p className="text-foreground/70">{benefit.description}</p>
                 </CardContent>
               </Card>
@@ -339,5 +401,4 @@ export default async function HomePage() {
       </section>
     </div>
   );
-
-    
+}
