@@ -230,7 +230,7 @@ export default async function HomePage() {
               />
             </div>
             <div className="animate-fade-in-left">
-              <div className="aspect-video mx-auto overflow-hidden rounded-xl shadow-2xl border">
+              <div className="aspect-square mx-auto overflow-hidden rounded-xl shadow-2xl border">
                 <video
                   className="w-full h-full object-cover"
                   src="/videos/petmetsvideo.mp4"
