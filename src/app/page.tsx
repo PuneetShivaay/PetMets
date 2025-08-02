@@ -216,11 +216,11 @@ export default async function HomePage() {
               Get a glimpse into the joyful connections and happy moments created every day on PetMets.
             </p>
           </div>
-          <div className="mx-auto max-w-4xl animate-fade-in-up" style={{ animationDelay: `300ms` }}>
-            <div className="aspect-video overflow-hidden rounded-xl shadow-2xl border">
+          <div className="mx-auto max-w-sm animate-fade-in-up" style={{ animationDelay: `300ms` }}>
+            <div className="aspect-[9/16] overflow-hidden rounded-xl shadow-2xl border">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/shorts/AFTp5YVwvac"
+                src="https://www.youtube.com/embed/AFTp5YVwvac"
                 title="PetMets - See It In Action"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
