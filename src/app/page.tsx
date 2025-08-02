@@ -129,15 +129,17 @@ export default async function HomePage() {
               </Link>
             </div>
           </div>
-          <Image
-            src={heroImageUrl}
-            alt="Two happy dogs and five cute cats together in a vibrant outdoor setting"
-            data-ai-hint="dogs cats garden"
-            width={600}
-            height={400}
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full animate-fade-in-left shadow-2xl"
-            priority 
-          />
+          <div className="mx-auto aspect-video overflow-hidden rounded-xl object-center sm:w-full animate-fade-in-left shadow-2xl bg-muted/30">
+            <Image
+              src={heroImageUrl}
+              alt="Two happy dogs and five cute cats together in a vibrant outdoor setting"
+              data-ai-hint="dogs cats garden"
+              width={600}
+              height={400}
+              className="w-full h-full object-contain"
+              priority 
+            />
+          </div>
         </div>
       </section>
 

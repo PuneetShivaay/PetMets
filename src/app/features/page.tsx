@@ -79,14 +79,14 @@ export default function FeaturesPage() {
       <div className="grid gap-8 md:grid-cols-2">
         {featuresData.map((feature, index) => (
           <Card key={index} className="flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow bg-card animate-fade-in-up" style={{ animationDelay: `${200 + index * 100}ms` }}>
-            <CardHeader className="p-0">
+            <CardHeader className="p-0 bg-muted/30 rounded-t-md">
               <Image
                 src={feature.image.src}
                 alt={feature.image.alt}
                 data-ai-hint={feature.image.hint}
                 width={500}
                 height={300}
-                className="rounded-t-md object-cover aspect-video w-full"
+                className="rounded-t-md object-contain aspect-video w-full"
               />
             </CardHeader>
             <div className="p-6 flex-grow flex flex-col">
