@@ -1,117 +1,167 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { PawPrint, UserPlus, Search, MessageCircle,Users } from "lucide-react";
+import { PawPrint, UserPlus, FilePenLine, UserRoundCheck, Heart, MessageSquare, Menu, Download } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link"; // Import Link
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function HowItWorksPage() {
   const externalAppUrl = "https://app.petmets.in";
+
   const steps = [
     {
-      icon: <UserPlus className="h-10 w-10 text-accent" />,
-      title: "Sign Up & Create Your Profile",
-      description: "Joining is quick and easy! Tell us about yourself and your beloved pet(s). Add photos and details to help others get to know you.",
-      image: { 
-        src: "https://placehold.co/500x300.png",
-        alt: "User signing up and creating a pet profile on PetMets", 
-        dataAiHint: "app signup profile" 
+      icon: <UserPlus className="h-8 w-8 text-accent" />,
+      title: "Create Your Account",
+      description: "Sign up quickly with your email and start your journey with PetMets.",
+      image: {
+        src: "https://placehold.co/550x350.png",
+        alt: "Signup screen for PetMets",
+        dataAiHint: "app signup screen"
       },
     },
     {
-      icon: <Search className="h-10 w-10 text-accent" />,
-      title: "Discover & Find Matches",
-      description: "Browse profiles of other pet owners in your area. Use our filters to find pets with similar play styles, breeds, or ages.",
-      image: { 
-        src: "https://placehold.co/500x300.png", 
-        alt: "Discovering pet matches and browsing profiles on PetMets", 
-        dataAiHint: "pet matching discover" 
+      icon: <FilePenLine className="h-8 w-8 text-accent" />,
+      title: "Complete Your Pet’s Profile",
+      description: "Tell us about your pet to get the best match and service suggestions.",
+      image: {
+        src: "https://placehold.co/550x350.png",
+        alt: "Dashboard prompting user to complete pet profile",
+        dataAiHint: "app dashboard profile"
       },
     },
     {
-      icon: <MessageCircle className="h-10 w-10 text-accent" />,
-      title: "Connect & Communicate",
-      description: "Once you find a potential PetMet, send a friendly message! Arrange safe and fun meetups for your pets to socialize.",
-      image: { 
-        src: "https://placehold.co/500x300.png", 
-        alt: "Connecting and chatting with other pet owners on PetMets", 
-        dataAiHint: "app messaging connect" 
+      icon: <UserRoundCheck className="h-8 w-8 text-accent" />,
+      title: "Add or Update Pet Details",
+      description: "Update your pet’s age, breed, bio, and your contact info anytime.",
+      image: {
+        src: "https://placehold.co/550x350.png",
+        alt: "Pet profile screen with edit options",
+        dataAiHint: "app pet profile"
       },
     },
     {
-      icon: <Users className="h-10 w-10 text-accent" />,
-      title: "Build Your Community",
-      description: "Participate in local events, join groups, and share experiences. PetMets is more than an app – it's a community!",
-      image: { 
-        src: "https://placehold.co/500x300.png", 
-        alt: "Pets and owners building a community through PetMets", 
-        dataAiHint: "pets community social" 
+      icon: <Heart className="h-8 w-8 text-accent" />,
+      title: "Find Matches for Your Pet",
+      description: "Swipe, send requests, and find the perfect playmate or match.",
+      image: {
+        src: "https://placehold.co/550x350.png",
+        alt: "Pet matching interface on the app",
+        dataAiHint: "app pet matching"
+      },
+    },
+    {
+      icon: <MessageSquare className="h-8 w-8 text-accent" />,
+      title: "Chat with Pet Owners",
+      description: "Connect and communicate with fellow pet lovers directly in the app.",
+      image: {
+        src: "https://placehold.co/550x350.png",
+        alt: "Chat interface between two pet owners",
+        dataAiHint: "app chat"
+      },
+    },
+    {
+      icon: <MessageSquare className="h-8 w-8 text-accent" />,
+      title: "Chat with Anyone",
+      description: "Continue conversations and build a community with other pet parents.",
+      image: {
+        src: "https://placehold.co/550x350.png",
+        alt: "List of ongoing chats with other pet owners",
+        dataAiHint: "app chat list"
+      },
+    },
+    {
+      icon: <Menu className="h-8 w-8 text-accent" />,
+      title: "Explore More Pet Services",
+      description: "From grooming to training and boarding—find everything your pet needs.",
+      image: {
+        src: "https://placehold.co/550x350.png",
+        alt: "App side menu showing various pet services",
+        dataAiHint: "app services menu"
       },
     },
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12 md:px-6 md:py-16 lg:py-24">
-      <div className="mb-12 text-center animate-fade-in-down">
-        <PawPrint className="mx-auto h-16 w-16 text-primary mb-4" />
-        <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-          How PetMets Works
-        </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
-          Connecting with fellow pet lovers is simple. Follow these easy steps to start your journey with PetMets.
-        </p>
-      </div>
-
-      <div className="grid gap-10 md:gap-16">
-        {steps.map((step, index) => (
-          <div
-            key={index}
-            className={`flex flex-col items-center gap-8 md:gap-12 animate-fade-in-up ${
-              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            }`}
-            style={{ animationDelay: `${200 + index * 150}ms` }}
-          >
-            <div className="md:w-1/2">
-              <Image
-                src={step.image.src}
-                alt={step.image.alt}
-                data-ai-hint={step.image.dataAiHint}
-                width={500}
-                height={300}
-                className="rounded-xl shadow-lg object-cover aspect-video"
-              />
-            </div>
-            <div className="md:w-1/2">
-              <Card className="bg-card shadow-md">
-                <CardHeader className="flex-row items-center gap-4 space-y-0 pb-4">
-                  <div className="rounded-full bg-accent/10 p-3">
-                     {step.icon}
-                  </div>
-                  <CardTitle className="font-headline text-2xl text-primary">{step.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base text-foreground/70">{step.description}</CardDescription>
-                </CardContent>
-              </Card>
-            </div>
+    <div className="flex flex-col">
+      {/* Hero Section */}
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
+        <div className="container mx-auto px-4 md:px-6 text-center animate-fade-in-down">
+          <PawPrint className="mx-auto h-16 w-16 text-primary mb-6" />
+          <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl">
+            How PetMets Works
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80 md:text-xl">
+            A simple way to care, connect & enjoy life with your pets.
+          </p>
+          <div className="mt-8">
+            <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md">
+                <Download className="mr-2 h-5 w-5" />
+                Download the App
+              </Button>
+            </Link>
           </div>
-        ))}
+        </div>
+      </section>
+
+      {/* Step-by-Step Walkthrough */}
+      <div className="container mx-auto px-4 py-16 md:px-6 md:py-24 lg:py-32">
+        <div className="grid gap-16 md:gap-24">
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className={`flex flex-col items-center gap-8 md:gap-12 animate-fade-in-up ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
+              style={{ animationDelay: `${200 + index * 100}ms` }}
+            >
+              <div className="md:w-1/2">
+                <Image
+                  src={step.image.src}
+                  alt={step.image.alt}
+                  data-ai-hint={step.image.dataAiHint}
+                  width={550}
+                  height={350}
+                  className="rounded-xl shadow-lg object-contain aspect-video bg-muted/30"
+                />
+              </div>
+              <div className="md:w-1/2">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex-shrink-0 grid place-items-center h-12 w-12 rounded-full bg-primary/10 text-primary font-bold text-xl font-headline">
+                    {index + 1}
+                  </div>
+                  <h2 className="font-headline text-3xl font-semibold text-primary">{step.title}</h2>
+                </div>
+                <p className="text-lg text-foreground/80 pl-16">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-16 text-center animate-fade-in-up" style={{ animationDelay: "800ms" }}>
-        <h2 className="font-headline text-3xl font-bold tracking-tight text-primary">
-          Ready to Get Started?
-        </h2>
-        <p className="mt-3 max-w-md mx-auto text-lg text-foreground/80">
-          Join PetMets today and find your pet's new best friend!
-        </p>
-        <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
-          <button
-            className="mt-8 inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-medium text-accent-foreground shadow-sm hover:bg-accent/90 transition-colors"
-          >
-            Sign Up Now
-          </button>
-        </Link>
-      </div>
+      {/* Final CTA Section */}
+      <section className="w-full py-16 md:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 md:px-6 text-center animate-fade-in-up">
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+            Ready to Start?
+          </h2>
+          <p className="mt-3 max-w-md mx-auto text-lg text-foreground/80">
+            Download PetMets now and make pet parenting smarter and simpler.
+          </p>
+          <div className="mt-8">
+            <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md">
+                <Download className="mr-2 h-5 w-5" />
+                Download App
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
+    
