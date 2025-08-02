@@ -182,22 +182,6 @@ export default async function HomePage() {
         </div>
       </section>
       
-      {/* Standalone Image Section */}
-      <section className="w-full py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="animate-fade-in-up">
-            <Image
-              src="/images/Know More About PetMets.png"
-              alt="PetMets app being used on a phone"
-              data-ai-hint="app mobile screenshot"
-              width={1200}
-              height={800}
-              className="rounded-xl shadow-2xl mx-auto w-full max-w-4xl h-auto object-contain"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose PetMets Section */}
       <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
@@ -287,21 +271,31 @@ export default async function HomePage() {
 
       {/* Call to Action Section */}
       <section className="w-full py-16 md:py-24 lg:py-32 bg-background border-t border-border/40">
-        <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6 animate-fade-in-up">
-          <div className="space-y-4">
+        <div className="container mx-auto grid items-center justify-center gap-8 px-4 md:px-6 md:grid-cols-2 lg:gap-16 animate-fade-in-up">
+          <div className="animate-fade-in-right">
+            <Image
+              src="/images/Know More About PetMets.png"
+              alt="PetMets app being used on a phone"
+              data-ai-hint="app mobile screenshot"
+              width={1200}
+              height={800}
+              className="rounded-xl shadow-2xl mx-auto w-full max-w-md h-auto object-contain"
+            />
+          </div>
+          <div className="space-y-4 text-center md:text-left animate-fade-in-left">
             <h2 className="font-headline text-4xl font-bold tracking-tight text-primary md:text-5xl/tight">
               Ready to Unleash New Friendships?
             </h2>
-            <p className="mx-auto max-w-[600px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
+            <p className="mx-auto max-w-[600px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed md:mx-0">
               Sign up today and start connecting with a community that shares your passion for pets. Your next adventure awaits!
             </p>
-          </div>
-          <div className="mx-auto w-full max-w-sm space-y-2 mt-4">
-            <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
-              <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-md" size="lg">
-                Sign Up Now
-              </Button>
-            </Link>
+            <div className="mx-auto w-full max-w-sm space-y-2 mt-6 md:mx-0">
+              <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
+                <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-md" size="lg">
+                  Sign Up Now
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
