@@ -220,7 +220,7 @@ export default async function HomePage() {
             <div className="aspect-video overflow-hidden rounded-xl shadow-2xl border">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/your_video_id_here"
+                src="https://www.youtube.com/shorts/AFTp5YVwvac"
                 title="PetMets - See It In Action"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
