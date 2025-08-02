@@ -1,5 +1,5 @@
 
-import { Twitter, Facebook, Instagram, Heart, ChevronRight, Linkedin } from 'lucide-react';
+import { Twitter, Facebook, Instagram, Heart, ChevronRight, Linkedin, Youtube } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
@@ -53,11 +53,14 @@ export default function Footer() {
               <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary p-2 rounded-full hover:bg-muted/50 transition-colors">
                 <Facebook className="h-6 w-6" />
               </Link>
-              <Link href="https://www.instagram.com/petmets/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary p-2 rounded-full hover:bg-muted/50 transition-colors">
+              <Link href="https://www.instagram.com/petmetsin/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary p-2 rounded-full hover:bg-muted/50 transition-colors">
                 <Instagram className="h-6 w-6" />
               </Link>
               <Link href="https://www.linkedin.com/company/petmets/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary p-2 rounded-full hover:bg-muted/50 transition-colors">
                 <Linkedin className="h-6 w-6" />
+              </Link>
+              <Link href="https://www.youtube.com/@PetMets" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-muted-foreground hover:text-primary p-2 rounded-full hover:bg-muted/50 transition-colors">
+                <Youtube className="h-6 w-6" />
               </Link>
             </div>
           </div>
