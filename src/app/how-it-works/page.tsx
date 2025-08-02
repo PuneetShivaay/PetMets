@@ -14,7 +14,7 @@ export default function HowItWorksPage() {
       title: "Create Your Account",
       description: "Sign up quickly with your email and start your journey with PetMets.",
       image: {
-        src: "/images/Create-your-account.png",
+        src: "/images/Create Your Account.png",
         alt: "Signup screen for PetMets",
         dataAiHint: "app signup screen"
       },
@@ -24,7 +24,7 @@ export default function HowItWorksPage() {
       title: "Complete Your Pet’s Profile",
       description: "Tell us about your pet to get the best match and service suggestions.",
       image: {
-        src: "/images/Complete-your-pets-profile.png",
+        src: "/images/Complete Your Pet’s Profile.png",
         alt: "Dashboard prompting user to complete pet profile",
         dataAiHint: "app dashboard profile"
       },
@@ -34,7 +34,7 @@ export default function HowItWorksPage() {
       title: "Add or Update Pet Details",
       description: "Update your pet’s age, breed, bio, and your contact info anytime.",
       image: {
-        src: "/images/Add-or-update-pet-details.png",
+        src: "/images/Add or Update Pet Details.png",
         alt: "Pet profile screen with edit options",
         dataAiHint: "app pet profile"
       },
@@ -44,7 +44,7 @@ export default function HowItWorksPage() {
       title: "Find Matches for Your Pet",
       description: "Swipe, send requests, and find the perfect playmate or match.",
       image: {
-        src: "/images/Find-matches-for-your-pet.png",
+        src: "/images/Find Matches for Your Pet.png",
         alt: "Pet matching interface on the app",
         dataAiHint: "app pet matching"
       },
@@ -54,7 +54,7 @@ export default function HowItWorksPage() {
       title: "Chat with Pet Owners",
       description: "Connect and communicate with fellow pet lovers directly in the app.",
       image: {
-        src: "/images/Chat-with-pet-owners.png",
+        src: "/images/Chat with Pet Owners.png",
         alt: "Chat interface between two pet owners",
         dataAiHint: "app chat"
       },
@@ -64,7 +64,7 @@ export default function HowItWorksPage() {
       title: "Chat with Anyone",
       description: "Continue conversations and build a community with other pet parents.",
       image: {
-        src: "/images/Chat-with-anyone.png",
+        src: "/images/Chat with Anyone.png",
         alt: "List of ongoing chats with other pet owners",
         dataAiHint: "app chat list"
       },
@@ -74,7 +74,7 @@ export default function HowItWorksPage() {
       title: "Explore More Pet Services",
       description: "From grooming to training and boarding—find everything your pet needs.",
       image: {
-        src: "/images/Explore-more-pet-services.png",
+        src: "/images/Explore More Pet Services.png",
         alt: "App side menu showing various pet services",
         dataAiHint: "app services menu"
       },
