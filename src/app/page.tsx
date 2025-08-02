@@ -230,10 +230,10 @@ export default async function HomePage() {
               />
             </div>
             <div className="animate-fade-in-left">
-              <div className="aspect-[9/16] max-w-sm mx-auto overflow-hidden rounded-xl shadow-2xl border">
+              <div className="aspect-video mx-auto overflow-hidden rounded-xl shadow-2xl border">
                 <video
                   className="w-full h-full object-cover"
-                  src="/videos/petmets-promo.mp4"
+                  src="/videos/petmetsvideo.mp4"
                   title="PetMets - See It In Action"
                   autoPlay
                   loop
@@ -387,5 +387,5 @@ function ServiceCard({ icon, title, description, features, ctaText, ctaLink, ani
     </Card>
   );
 }
-
+    
     
