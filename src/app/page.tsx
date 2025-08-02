@@ -285,37 +285,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Section 4: Benefits for Pet Parents */}
+      {/* Section 4: Video Section */}
       <section className="w-full py-16 md:py-24 lg:py-32">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down mb-12">
-            <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-              Designed for You and Your Pet
-            </h2>
-            <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
-              We focus on what matters most: safety, community, and convenience.
-            </p>
-          </div>
-          <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full animate-fade-in-up border-0 text-center" style={{ animationDelay: `${200 + index * 100}ms` }}>
-                <CardHeader className="flex flex-col items-center p-8">
-                  <div className="mb-4 rounded-full bg-secondary/80 p-4">
-                    {benefit.icon}
-                  </div>
-                  <CardTitle className="font-headline text-2xl text-primary">{benefit.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="p-8 pt-0">
-                  <p className="text-foreground/70">{benefit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Section 5: Video Section */}
-      <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down mb-12">
             <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
@@ -329,7 +300,7 @@ export default async function HomePage() {
             <div className="aspect-square max-w-xl mx-auto overflow-hidden rounded-xl shadow-2xl border">
               <video
                 className="w-full h-full object-cover"
-                src="/videos/petmets-promo.mp4"
+                src="/videos/petmetsvideo.mp4"
                 title="PetMets - See It In Action"
                 autoPlay
                 loop
@@ -340,6 +311,35 @@ export default async function HomePage() {
                 Your browser does not support the video tag.
               </video>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Section 5: Benefits for Pet Parents */}
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down mb-12">
+            <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+              Designed for You and Your Pet
+            </h2>
+            <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
+              We focus on what matters most: safety, community, and convenience.
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
+            {benefits.map((benefit, index) => (
+              <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full animate-fade-in-up border-0 text-center" style={{ animationDelay: `${200 + index * 100}ms` }}>
+                <CardHeader className="flex flex-col items-center p-8">
+                  <div className="mb-4 rounded-full bg-primary/10 p-4">
+                    {benefit.icon}
+                  </div>
+                  <CardTitle className="font-headline text-2xl text-primary">{benefit.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-8 pt-0">
+                  <p className="text-foreground/70">{benefit.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
