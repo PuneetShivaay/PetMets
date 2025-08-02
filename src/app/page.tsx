@@ -108,7 +108,7 @@ export default async function HomePage() {
       {/* Hero Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/50">
         <div className="container mx-auto grid items-center gap-6 px-4 text-center md:grid-cols-2 md:px-6 md:text-left lg:gap-10">
-          <div className="space-y-4">
+          <div className="space-y-4 animate-fade-in-right">
             <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl">
               Welcome to PetMets!
             </h1>
@@ -135,7 +135,7 @@ export default async function HomePage() {
             data-ai-hint="dogs cats garden"
             width={600}
             height={400}
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full animate-fade-in-left"
             priority 
           />
         </div>
@@ -144,7 +144,7 @@ export default async function HomePage() {
       {/* Features Section */}
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down">
             <div className="space-y-2">
               <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-muted-foreground">
                 Key Features
@@ -162,16 +162,19 @@ export default async function HomePage() {
               icon={<Users className="h-8 w-8 text-accent" />}
               title="Build Your Pack"
               description="Create detailed profiles for you and your pets. Share photos, stories, and preferences to find your perfect matches."
+              animationDelay={200}
             />
             <FeatureCard
               icon={<Search className="h-8 w-8 text-accent" />}
               title="Discover Connections"
               description="Use our smart search and matching tools to find nearby pet owners with similar interests and compatible pets."
+              animationDelay={300}
             />
             <FeatureCard
               icon={<MessageSquareHeart className="h-8 w-8 text-accent" />}
               title="Engage & Interact"
               description="Join group discussions, attend local events, and chat privately to strengthen your new friendships."
+              animationDelay={400}
             />
           </div>
         </div>
@@ -180,7 +183,7 @@ export default async function HomePage() {
       {/* Why Choose PetMets Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 animate-fade-in-down">
             <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-muted-foreground">
               Our Advantages
             </div>
@@ -193,7 +196,7 @@ export default async function HomePage() {
           </div>
           <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:grid-cols-3 lg:gap-12">
             {whyChoosePetMetsItems.map((item, index) => (
-              <BenefitItem key={index} icon={item.icon} title={item.title} description={item.description} />
+              <BenefitItem key={index} icon={item.icon} title={item.title} description={item.description} animationDelay={200 + index * 100} />
             ))}
           </div>
         </div>
@@ -202,7 +205,7 @@ export default async function HomePage() {
       {/* Pet Services Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/50">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 animate-fade-in-down">
             <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-muted-foreground">
               Our Services
             </div>
@@ -224,6 +227,7 @@ export default async function HomePage() {
                 features={service.features}
                 ctaText={service.ctaText}
                 ctaLink={service.ctaLink}
+                animationDelay={200 + index * 100}
               />
             ))}
           </div>
@@ -232,7 +236,7 @@ export default async function HomePage() {
 
       {/* Call to Action Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-background border-t border-border">
-        <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
+        <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6 animate-fade-in-up">
           <div className="space-y-3">
             <h2 className="font-headline text-3xl font-bold tracking-tighter text-primary md:text-4xl/tight">
               Ready to Unleash New Friendships?
@@ -258,11 +262,12 @@ interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  animationDelay?: number;
 }
 
-function FeatureCard({ icon, title, description }: FeatureCardProps) {
+function FeatureCard({ icon, title, description, animationDelay }: FeatureCardProps) {
   return (
-    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 h-full animate-fade-in-up" style={{ animationDelay: `${animationDelay}ms` }}>
       <CardHeader className="flex flex-col items-center text-center p-6">
         <div className="mb-4 rounded-full bg-accent/10 p-3">
           {icon}
@@ -280,11 +285,12 @@ interface BenefitItemProps {
   icon: React.ReactNode;
   title: string;
   description: string;
+  animationDelay?: number;
 }
 
-function BenefitItem({ icon, title, description }: BenefitItemProps) {
+function BenefitItem({ icon, title, description, animationDelay }: BenefitItemProps) {
   return (
-    <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card shadow-md hover:shadow-lg transition-shadow h-full">
+    <div className="flex flex-col items-center text-center p-6 rounded-lg bg-card shadow-md hover:shadow-lg transition-shadow h-full animate-fade-in-up" style={{ animationDelay: `${animationDelay}ms` }}>
       <div className="mb-4 rounded-full bg-primary/10 p-4">
         {icon}
       </div>
@@ -296,16 +302,17 @@ function BenefitItem({ icon, title, description }: BenefitItemProps) {
 
 interface ServiceCardProps {
   icon: ReactNode;
-  title: string;
+  title:string;
   description: string;
   features: string[];
   ctaText: string;
   ctaLink: string;
+  animationDelay?: number;
 }
 
-function ServiceCard({ icon, title, description, features, ctaText, ctaLink }: ServiceCardProps) {
+function ServiceCard({ icon, title, description, features, ctaText, ctaLink, animationDelay }: ServiceCardProps) {
   return (
-    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+    <Card className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full animate-fade-in-up" style={{ animationDelay: `${animationDelay}ms` }}>
       <CardHeader className="flex flex-row items-center gap-4 p-6 space-y-0">
         <div className="rounded-full bg-primary/10 p-3">
           {icon}

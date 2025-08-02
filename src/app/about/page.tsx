@@ -40,7 +40,7 @@ const reviewsData: Review[] = [
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:px-6 md:py-16 lg:py-24">
-      <header className="mb-12 text-center">
+      <header className="mb-12 text-center animate-fade-in-down">
         <PawPrint className="mx-auto h-16 w-16 text-primary mb-4" />
         <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
           About PetMets
@@ -50,7 +50,7 @@ export default function AboutPage() {
         </p>
       </header>
 
-      <section className="mb-16 grid gap-8 md:grid-cols-2 md:gap-12 items-center">
+      <section className="mb-16 grid gap-8 md:grid-cols-2 md:gap-12 items-center animate-fade-in-up">
         <div>
           <h2 className="font-headline text-3xl font-semibold text-primary mb-4 flex items-center">
             <Target className="mr-3 h-8 w-8 text-accent" />
@@ -64,7 +64,7 @@ export default function AboutPage() {
           </p>
         </div>
         <Image
-          src="/images/mission.jpeg" // <-- YOU WILL UPDATE THIS SRC PATH
+          src="https://placehold.co/550x350.png"
           alt="Illustrative image representing PetMets' mission in action"
           data-ai-hint="mission action"
           width={550}
@@ -73,9 +73,9 @@ export default function AboutPage() {
         />
       </section>
 
-      <section className="mb-16 grid gap-8 md:grid-cols-2 md:gap-12 items-center">
+      <section className="mb-16 grid gap-8 md:grid-cols-2 md:gap-12 items-center animate-fade-in-up" style={{ animationDelay: "200ms" }}>
          <Image
-          src="/images/vision.jpeg" // <-- YOU WILL UPDATE THIS SRC PATH
+          src="https://placehold.co/550x350.png"
           alt="Conceptual image visualizing PetMets' future vision"
           data-ai-hint="vision future"
           width={550}
@@ -88,7 +88,7 @@ export default function AboutPage() {
             Our Vision
           </h2>
           <p className="text-lg text-foreground/80 mb-4">
-            We envision a world where no pet feels lonely and every pet owner has a network of support. PetMets aspires to be the leading platform for pet socialization, recognized for its positive impact on animal well-being and human connection.
+            We envision a world where no pet feels lonely and every pet owner has a network of support. PetMets aspires to be the leading platform for pet socialization, recognized for its positive impact on animal well-being and human-connection.
           </p>
           <p className="text-lg text-foreground/80">
             Through innovation and a deep love for animals, we aim to continuously evolve, offering new ways for our community to connect, learn, and grow together.
@@ -96,7 +96,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 lg:py-24 bg-secondary/30 rounded-xl">
+      <section className="py-12 md:py-16 lg:py-24 bg-secondary/30 rounded-xl animate-fade-in-up" style={{ animationDelay: "400ms" }}>
         <div className="container mx-auto px-4 md:px-6">
           <div className="mb-12 text-center">
             <HeartHandshake className="mx-auto h-16 w-16 text-primary mb-4" />
@@ -110,7 +110,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {reviewsData.map((review, index) => (
-              <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+              <Card key={index} className="bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col animate-fade-in-up" style={{ animationDelay: `${500 + index * 150}ms` }}>
                 <CardHeader className="flex flex-row items-center gap-4 pb-4">
                   <Avatar className="h-12 w-12">
                     <AvatarImage src={`https://placehold.co/100x100.png?text=${review.avatarFallback}`} alt={review.name} data-ai-hint="user avatar" />

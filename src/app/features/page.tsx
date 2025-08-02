@@ -66,7 +66,7 @@ const featuresData: Feature[] = [
 export default function FeaturesPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:px-6 md:py-16 lg:py-24">
-      <header className="mb-12 text-center">
+      <header className="mb-12 text-center animate-fade-in-down">
         <PawPrint className="mx-auto h-16 w-16 text-primary mb-4" />
         <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
           Explore Our Pawsome Features
@@ -78,7 +78,7 @@ export default function FeaturesPage() {
 
       <div className="grid gap-8 md:grid-cols-2">
         {featuresData.map((feature, index) => (
-          <Card key={index} className="flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow bg-card">
+          <Card key={index} className="flex flex-col h-full shadow-lg hover:shadow-xl transition-shadow bg-card animate-fade-in-up" style={{ animationDelay: `${200 + index * 100}ms` }}>
             <CardHeader className="p-0">
               <Image
                 src={feature.image.src}
