@@ -210,7 +210,7 @@ export default async function HomePage() {
               See It In Action
             </div>
             <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
-              Watch Our Story
+              Know More About PetMets
             </h2>
             <p className="max-w-[900px] text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
               Get a glimpse into the joyful connections and happy moments created every day on PetMets.
