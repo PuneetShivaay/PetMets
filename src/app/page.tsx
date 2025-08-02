@@ -284,8 +284,8 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Section 4: Video Section */}
+      
+      {/* Section 4: See PetMets in Action */}
       <section className="w-full py-16 md:py-24 lg:py-32">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center animate-fade-in-down mb-12">
@@ -314,7 +314,7 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      
+
       {/* Section 5: Benefits for Pet Parents */}
       <section className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
@@ -354,7 +354,7 @@ export default async function HomePage() {
               data-ai-hint="app mobile screenshot"
               width={1200}
               height={800}
-              className="rounded-xl shadow-2xl mx-auto w-full max-w-md h-auto object-contain"
+              className="rounded-xl mx-auto w-full max-w-md h-auto object-contain"
             />
           </div>
           <div className="space-y-6 text-center md:text-left animate-fade-in-left">
