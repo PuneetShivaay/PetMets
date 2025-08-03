@@ -297,7 +297,7 @@ export default async function HomePage() {
             </p>
           </div>
           <div className="animate-fade-in-up">
-            <div className="aspect-square max-w-xl mx-auto overflow-hidden rounded-xl shadow-2xl border">
+            <div className="aspect-video max-w-4xl mx-auto overflow-hidden rounded-xl shadow-2xl border">
               <video
                 className="w-full h-full object-cover"
                 src="/videos/petmetsvideo.mp4"
