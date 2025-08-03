@@ -116,23 +116,25 @@ export default function HowItWorksPage() {
               style={{ animationDelay: `${200 + index * 100}ms` }}
             >
               <div className="md:w-1/2">
-                <Image
-                  src={step.image.src}
-                  alt={step.image.alt}
-                  data-ai-hint={step.image.dataAiHint}
-                  width={550}
-                  height={350}
-                  className="rounded-xl shadow-lg object-contain bg-muted/30"
-                />
+                <div className="aspect-video w-full overflow-hidden rounded-xl bg-muted/30 shadow-lg">
+                  <Image
+                    src={step.image.src}
+                    alt={step.image.alt}
+                    data-ai-hint={step.image.dataAiHint}
+                    width={550}
+                    height={310} // Adjusted for 16:9 aspect ratio
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               </div>
               <div className="md:w-1/2">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="flex-shrink-0 grid place-items-center h-12 w-12 rounded-full bg-primary/10 text-primary font-bold text-xl font-headline">
+                  <div className="flex-shrink-0 grid place-items-center h-14 w-14 rounded-full bg-primary/10 text-primary font-bold text-2xl font-headline">
                     {index + 1}
                   </div>
                   <h2 className="font-headline text-3xl font-semibold text-primary">{step.title}</h2>
                 </div>
-                <p className="text-lg text-foreground/80 pl-16">
+                <p className="text-lg text-foreground/80 md:pl-20">
                   {step.description}
                 </p>
               </div>
@@ -145,7 +147,7 @@ export default function HowItWorksPage() {
       <section className="w-full py-16 md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6 text-center animate-fade-in-up">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            Ready to Start?
+            Ready to Start Your Journey?
           </h2>
           <p className="mt-3 max-w-md mx-auto text-lg text-foreground/80">
             Download PetMets now and make pet parenting smarter and simpler.
