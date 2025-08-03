@@ -58,7 +58,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in-right">
             <Image
-              src="https://placehold.co/550x400.png"
+              src="/images/mission.jpeg"
               alt="Team of PetMets founders"
               data-ai-hint="team founders"
               width={550}
