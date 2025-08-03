@@ -116,13 +116,13 @@ export default function HowItWorksPage() {
               style={{ animationDelay: `${200 + index * 100}ms` }}
             >
               <div className="md:w-1/2">
-                <div className="aspect-video w-full overflow-hidden rounded-xl bg-muted/30 shadow-lg">
+                <div className="aspect-square w-full max-w-md mx-auto overflow-hidden rounded-xl bg-muted/30 shadow-lg">
                   <Image
                     src={step.image.src}
                     alt={step.image.alt}
                     data-ai-hint={step.image.dataAiHint}
                     width={550}
-                    height={310} // Adjusted for 16:9 aspect ratio
+                    height={550}
                     className="h-full w-full object-cover"
                   />
                 </div>
