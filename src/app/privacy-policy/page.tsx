@@ -2,7 +2,7 @@
 import { PawPrint, ShieldCheck } from "lucide-react";
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = "October 26, 2024";
+  const lastUpdated = "October 26, 2025";
   const companyName = "PetMets";
   const appName = "PetMets";
   const contactEmail = "support@petmets.in";
