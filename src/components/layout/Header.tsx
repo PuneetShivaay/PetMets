@@ -6,25 +6,7 @@ import { Button } from '@/components/ui/button';
 import { LogIn, Menu, X } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-
-const NavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => {
-  const pathname = usePathname();
-  const isActive = pathname === href;
-  return (
-    <Link href={href} passHref onClick={onClick}>
-      <span
-        className={cn(
-          "font-medium text-foreground/70 transition-colors hover:text-primary",
-          isActive && "text-primary font-semibold"
-        )}
-      >
-        {children}
-      </span>
-    </Link>
-  );
-};
+import { NavLink } from './NavLink';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
