@@ -146,7 +146,7 @@ export default function ContactPage() {
                     <h3 className="font-semibold text-lg text-foreground">
                       Call Us
                     </h3>
-                    <p className="text-foreground/80">(+91) 123-456-7890</p>
+                    <p className="text-foreground/80">(+91) 9826208645</p>
                   </div>
                 </div>
               </div>
