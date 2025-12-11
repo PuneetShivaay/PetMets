@@ -16,6 +16,7 @@ export default function Header() {
     { href: '/features', label: 'Features' },
     { href: '/how-it-works', label: 'How It Works' },
     { href: '/about', label: 'About Us' },
+    { href: '/contact', label: 'Contact Us' },
   ];
 
   const externalAppLoginUrl = "https://app.petmets.in";
