@@ -77,17 +77,28 @@ export default function PrivacyPolicyPage() {
           <h2>4. Security of Your Information</h2>
           <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.</p>
 
-          <h2>5. Policy for Children</h2>
+          <h2>5. Requesting Account Deletion</h2>
+          <p>You have the right to request the deletion of your account and all associated data. To do so, please send an email to our support team. Clicking the link below will open your default email client with a pre-filled request to make this process easier for you.</p>
+          <p>
+            <a 
+              href={`mailto:${contactEmail}?subject=Account%20and%20Data%20Deletion%20Request&body=I%20would%20like%20to%20request%20the%20deletion%20of%20my%20PetMets%20account%20and%20all%20associated%20data.%0A%0APlease%20provide%20the%20email%20address%20or%20username%20associated%20with%20the%20account%20below%3A%0A%0A`}
+              className="text-primary hover:underline"
+            >
+              Request Account and Data Deletion
+            </a>
+          </p>
+
+          <h2>6. Policy for Children</h2>
           <p>We do not knowingly solicit information from or market to children under the age of 13. If we learn that we have collected personal information from a child under age 13 without verification of parental consent, we will delete that information as quickly as possible. If you become aware of any data we have collected from children under age 13, please contact us using the contact information provided below.</p>
           
-          <h2>6. Changes to This Privacy Policy</h2>
+          <h2>7. Changes to This Privacy Policy</h2>
           <p>We may update this Privacy Policy from time to time in order to reflect, for example, changes to our practices or for other operational, legal, or regulatory reasons. We will notify you of any changes by updating the "Last Updated" date of this Privacy Policy.</p>
 
-          <h2>7. Contact Us</h2>
+          <h2>8. Contact Us</h2>
           <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
           <p>
             <strong>{companyName}</strong><br />
-            Email: <a href="mailto:{contactEmail}" className="text-primary hover:underline">{contactEmail}</a>
+            Email: <a href={`mailto:${contactEmail}`} className="text-primary hover:underline">{contactEmail}</a>
           </p>
 
         </div>
