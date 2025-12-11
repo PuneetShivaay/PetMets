@@ -17,7 +17,7 @@ export default function ContactPage() {
     e.preventDefault();
     const subject = `Contact Form Submission from ${name}`;
     const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoLink = `mailto:petmets@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:info.petmets@gmail.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
@@ -131,10 +131,10 @@ export default function ContactPage() {
                       Email Us
                     </h3>
                     <a
-                      href="mailto:petmets@gmail.com"
+                      href="mailto:info.petmets@gmail.com"
                       className="text-foreground/80 hover:text-primary transition-colors"
                     >
-                      petmets@gmail.com
+                      info.petmets@gmail.com
                     </a>
                   </div>
                 </div>

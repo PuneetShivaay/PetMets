@@ -5,7 +5,7 @@ export default function PrivacyPolicyPage() {
   const lastUpdated = "October 26, 2025";
   const companyName = "PetMets";
   const appName = "PetMets";
-  const contactEmail = "support@petmets.in";
+  const contactEmail = "info.petmets@gmail.com";
 
   return (
     <div className="flex flex-col">
