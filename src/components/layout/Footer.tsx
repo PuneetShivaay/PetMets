@@ -15,7 +15,7 @@ export default function Footer() {
   ];
 
   const otherLinks = [
-    { href: '/privacy-policy', label: 'Privacy Policy' }, 
+    { href: '/privacy', label: 'Privacy Policy' }, 
     { href: '#', label: 'Terms of Service' }, // Placeholder
     { href: '#', label: 'Contact Us' }, // Placeholder
     { href: '#', label: 'FAQs' }, // Placeholder
