@@ -11,6 +11,7 @@ export default function Footer() {
     { href: '/', label: 'Home' },
     { href: '/features', label: 'Features' },
     { href: '/how-it-works', label: 'How It Works' },
+    { href: '/providers', label: 'For Providers' },
     { href: '/about', label: 'About Us' },
   ];
 
