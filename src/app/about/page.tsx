@@ -52,17 +52,17 @@ const foundersData: Founder[] = [
     name: "Ghanist Baghel",
     role: "Co-founder & CEO",
     bio: "Passionate animal lover with a background in community building and business strategy. Dedicated to making pet parenting a joyful experience through innovation and connection.",
-    image: "https://picsum.photos/seed/ghanist/400/400",
+    image: "/images/ghanisht.jpg",
     linkedin: "https://www.linkedin.com/in/ghanist-baghel/",
-    twitter: "#",
+    twitter: "https://www.instagram.com/petmetsin/",
   },
   {
     name: "Puneet Kumar",
     role: "Co-founder & CTO",
     bio: "Tech visionary with years of experience in scalable app development. Committed to building secure, intuitive, and high-performance platforms for pet enthusiasts worldwide.",
-    image: "https://picsum.photos/seed/puneet/400/400",
+    image: "/images/puneet.jpg",
     linkedin: "https://www.linkedin.com/in/puneetshivaay/",
-    twitter: "#",
+    twitter: "https://www.instagram.com/puneetshivaay/",
   },
 ];
 
