@@ -21,7 +21,8 @@ const AppStoreIcon = () => (
 
 
 export default async function HomePage() {
-  const externalAppUrl = "https://app.petmets.in";
+  const playStoreUrl = "https://play.google.com/store/apps/details?id=com.petmets.petmets&hl=en_IN";
+  const appStoreUrl = "https://app.petmets.in";
 
   const howItWorksSteps = [
     {
@@ -181,12 +182,12 @@ export default async function HomePage() {
               Book trusted services, connect with pet lovers, and manage your pet’s world—all in one app.
             </p>
             <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center md:justify-start">
-              <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
+              <Link href={playStoreUrl} passHref target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md">
                    <PlayStoreIcon /> Download for Android
                 </Button>
               </Link>
-              <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
+              <Link href={appStoreUrl} passHref target="_blank" rel="noopener noreferrer">
                  <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                    <AppStoreIcon /> Download for iOS
                 </Button>
@@ -365,12 +366,12 @@ export default async function HomePage() {
               Join 10,000+ happy pet parents across India. Download the app now and unlock a new world of possibilities for you and your pet.
             </p>
             <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center md:justify-start">
-               <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
+               <Link href={playStoreUrl} passHref target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md">
                    <PlayStoreIcon /> Download for Android
                 </Button>
               </Link>
-              <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
+              <Link href={appStoreUrl} passHref target="_blank" rel="noopener noreferrer">
                  <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                    <AppStoreIcon /> Download for iOS
                 </Button>

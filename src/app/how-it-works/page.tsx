@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function HowItWorksPage() {
-  const externalAppUrl = "https://app.petmets.in";
+  const playStoreUrl = "https://play.google.com/store/apps/details?id=com.petmets.petmets&hl=en_IN";
 
   const steps = [
     {
@@ -94,7 +94,7 @@ export default function HowItWorksPage() {
             A simple way to care, connect & enjoy life with your pets.
           </p>
           <div className="mt-8">
-            <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
+            <Link href={playStoreUrl} passHref target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md">
                 <Download className="mr-2 h-5 w-5" />
                 Download the App
@@ -153,7 +153,7 @@ export default function HowItWorksPage() {
             Download PetMets now and make pet parenting smarter and simpler.
           </p>
           <div className="mt-8">
-            <Link href={externalAppUrl} passHref target="_blank" rel="noopener noreferrer">
+            <Link href={playStoreUrl} passHref target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md">
                 <Download className="mr-2 h-5 w-5" />
                 Download App
