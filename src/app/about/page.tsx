@@ -49,19 +49,19 @@ interface Founder {
 
 const foundersData: Founder[] = [
   {
-    name: "Founder Name 1",
+    name: "Ghanist Baghel",
     role: "Co-founder & CEO",
     bio: "Passionate animal lover with a background in community building and business strategy. Dedicated to making pet parenting a joyful experience.",
     image: "https://picsum.photos/seed/founder1/400/400",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/ghanist-baghel/",
     twitter: "#",
   },
   {
-    name: "Founder Name 2",
+    name: "Puneet Kumar",
     role: "Co-founder & CTO",
     bio: "Tech visionary with years of experience in app development. Committed to building secure and intuitive platforms for pet enthusiasts.",
     image: "https://picsum.photos/seed/founder2/400/400",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/puneetshivaay/",
     twitter: "#",
   },
 ];
