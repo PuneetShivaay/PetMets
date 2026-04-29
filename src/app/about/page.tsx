@@ -1,8 +1,9 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PawPrint, Target, Eye, Star, HeartHandshake } from "lucide-react";
+import { PawPrint, Target, Eye, Star, HeartHandshake, Linkedin, Twitter, Users } from "lucide-react";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Link from "next/link";
 
 interface Review {
   name: string;
@@ -34,6 +35,34 @@ const reviewsData: Review[] = [
     reviewText: "The training resources and connections on PetMets have been invaluable. Oliver is a much more confident and well-behaved cat now. Highly recommend!",
     rating: 4,
     location: "Lucknow, UP",
+  },
+];
+
+interface Founder {
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+  linkedin?: string;
+  twitter?: string;
+}
+
+const foundersData: Founder[] = [
+  {
+    name: "Founder Name 1",
+    role: "Co-founder & CEO",
+    bio: "Passionate animal lover with a background in community building and business strategy. Dedicated to making pet parenting a joyful experience.",
+    image: "https://picsum.photos/seed/founder1/400/400",
+    linkedin: "#",
+    twitter: "#",
+  },
+  {
+    name: "Founder Name 2",
+    role: "Co-founder & CTO",
+    bio: "Tech visionary with years of experience in app development. Committed to building secure and intuitive platforms for pet enthusiasts.",
+    image: "https://picsum.photos/seed/founder2/400/400",
+    linkedin: "#",
+    twitter: "#",
   },
 ];
 
@@ -106,8 +135,56 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Founders Section */}
+      <section className="w-full py-16 md:py-24 lg:py-32 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="mb-12 text-center animate-fade-in-down">
+            <Users className="mx-auto h-16 w-16 text-primary mb-4" />
+            <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+              Meet Our Founders
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-foreground/80">
+              The visionary team behind PetMets, driven by a shared love for animals and a mission to build a more connected pet community.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 max-w-4xl mx-auto">
+            {foundersData.map((founder, index) => (
+              <div key={index} className="flex flex-col items-center text-center animate-fade-in-up" style={{ animationDelay: `${200 + index * 200}ms` }}>
+                <div className="relative h-64 w-64 mb-6 group">
+                  <Image
+                    src={founder.image}
+                    alt={founder.name}
+                    data-ai-hint="founder profile"
+                    fill
+                    className="rounded-full object-cover shadow-xl border-4 border-primary/10 group-hover:border-primary/30 transition-all duration-300"
+                  />
+                </div>
+                <h3 className="font-headline text-2xl font-bold text-primary">{founder.name}</h3>
+                <p className="text-accent font-medium mb-4">{founder.role}</p>
+                <p className="text-foreground/70 mb-6 px-4">
+                  {founder.bio}
+                </p>
+                <div className="flex gap-4">
+                  {founder.linkedin && (
+                    <Link href={founder.linkedin} target="_blank" className="p-2 bg-primary/10 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+                      <Linkedin className="h-5 w-5" />
+                    </Link>
+                  )}
+                  {founder.twitter && (
+                    <Link href={founder.twitter} target="_blank" className="p-2 bg-primary/10 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+                      <Twitter className="h-5 w-5" />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Reviews Section */}
-      <section className="py-16 md:py-24 lg:py-32 bg-background">
+      <section className="py-16 md:py-24 lg:py-32 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mb-12 text-center animate-fade-in-down">
             <HeartHandshake className="mx-auto h-16 w-16 text-primary mb-4" />
