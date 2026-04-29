@@ -63,7 +63,7 @@ export default async function HomePage() {
         "Seamless booking coordination",
       ],
       buttonText: "Find a Match",
-      buttonLink: "/features",
+      buttonLink: "https://app.petmets.in/",
     },
     {
       icon: <Dog className="h-8 w-8 text-primary" />,
@@ -76,7 +76,7 @@ export default async function HomePage() {
         "Flexible scheduling options",
       ],
       buttonText: "Book a Walker",
-      buttonLink: "/features",
+      buttonLink: "https://app.petmets.in/",
     },
     {
       icon: <Scissors className="h-8 w-8 text-primary" />,
@@ -89,7 +89,7 @@ export default async function HomePage() {
         "Gentle & safe products used",
       ],
       buttonText: "Book Grooming",
-      buttonLink: "/features",
+      buttonLink: "https://app.petmets.in/",
     },
     {
       icon: <HomeIcon className="h-8 w-8 text-primary" />,
@@ -102,7 +102,7 @@ export default async function HomePage() {
         "Spacious & comfortable stays",
       ],
       buttonText: "Reserve Boarding",
-      buttonLink: "/features",
+      buttonLink: "https://app.petmets.in/",
     },
     {
       icon: <GraduationCap className="h-8 w-8 text-primary" />,
@@ -115,7 +115,7 @@ export default async function HomePage() {
         "Positive reinforcement methods",
       ],
       buttonText: "Book Training",
-      buttonLink: "/features",
+      buttonLink: "https://app.petmets.in/",
     },
     {
       icon: <ToyBrick className="h-8 w-8 text-primary" />,
@@ -128,7 +128,7 @@ export default async function HomePage() {
         "Socialize and exercise",
       ],
       buttonText: "Explore Playzone",
-      buttonLink: "/features",
+      buttonLink: "https://app.petmets.in/",
     },
   ];
 
@@ -274,7 +274,7 @@ export default async function HomePage() {
                   </ul>
                 </CardContent>
                 <div className="p-6 pt-0 mt-auto">
-                   <Link href={service.buttonLink} passHref>
+                   <Link href={service.buttonLink} passHref target="_blank" rel="noopener noreferrer">
                     <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                       {service.buttonText}
                     </Button>
