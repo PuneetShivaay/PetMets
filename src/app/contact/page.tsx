@@ -61,7 +61,7 @@ export default function ContactPage() {
                         <Input
                           id="name"
                           type="text"
-                          placeholder="John Doe"
+                          placeholder="Puneet kumar"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           required
@@ -75,7 +75,7 @@ export default function ContactPage() {
                         <Input
                           id="email"
                           type="email"
-                          placeholder="john.doe@example.com"
+                          placeholder="puneetshivaay@gmail.com"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           required
@@ -89,7 +89,7 @@ export default function ContactPage() {
                       </Label>
                       <Textarea
                         id="message"
-                        placeholder="Your message here..."
+                        placeholder="Your message here for Petmets Team"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         required
